@@ -1,7 +1,11 @@
- 
-                                                                                                                               <h2> Login</h2>
+ <h2 align="center">Aplicativo Limos Delivery</h2>
+
 <p align="center">
-  <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/Screenshot_20200508-135422.png" width="200px">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/heltonphg/Limos-Delivery">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/heltonphg/Limos-Delivery">
+   <a href="https://github.com/heltonphg/backend_delivery/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/heltonphg/Limos-Delivery">
+  </a>
 </p>
 
 
