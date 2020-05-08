@@ -23,3 +23,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O Limos delivery é um projeto que visa conectar lanchonets aos clientes da sua cidade.
 
+## Fotos
+<p align="center">
+  <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/Screenshot_20200508-135422.png" width="160px">
+</p>
+
+
