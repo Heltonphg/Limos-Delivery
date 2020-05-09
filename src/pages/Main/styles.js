@@ -8,13 +8,12 @@ export const Container = styled.View`
 
 export const Welcome = styled.View`
   flex: 0.1;
-  padding: 0 20px;
+  padding: 3px 20px;
 `;
 
 export const WelcomeText = styled.Text`
   font-size: 24px;
   color: ${colors.secondary};
- 
   font-family: ${fonts.primary};
 `;
 
