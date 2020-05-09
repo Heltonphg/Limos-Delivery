@@ -8,7 +8,7 @@ export const Container = styled.View`
   height: 60px;
   background-color: ${colors.primary};
   align-items: center;
-  padding: 30px 20px;
+  padding: 30px 15px;
   margin-top: 10px;
   flex-direction: row;
   justify-content: space-between;

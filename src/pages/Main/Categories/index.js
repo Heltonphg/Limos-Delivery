@@ -5,6 +5,7 @@ import {
   TabItem,
   ImageIcon,
   TextIcon,
+  Title,
   TabItemContainer,
 } from './styles';
 
@@ -17,18 +18,17 @@ import porcoes from '~/assets/porcoes.png';
 export default function Categories() {
   return (
     <Container>
+      <Title>Categorias</Title>
       <CategoryContainer>
         <TabItemContainer>
-          <TabItem><ImageIcon source={prato} /></TabItem>
-        </TabItemContainer>
-
-        <TabItemContainer>
-          <TabItem><ImageIcon source={burguer} /></TabItem>
+          <TabItem>
+            <ImageIcon source={pizza} />
+          </TabItem>
         </TabItemContainer>
 
         <TabItemContainer>
           <TabItem>
-            <ImageIcon source={pizza} />
+            <ImageIcon source={burguer} />
           </TabItem>
         </TabItemContainer>
 
@@ -38,14 +38,17 @@ export default function Categories() {
           </TabItem>
         </TabItemContainer>
 
-        <TabItemContainer  style ={{paddingRight: 10}}>
+        <TabItemContainer>
           <TabItem>
             <ImageIcon source={porcoes} />
           </TabItem>
         </TabItemContainer>
 
-
-
+        <TabItemContainer style={{ paddingRight: 10 }}>
+          <TabItem>
+            <ImageIcon source={prato} />
+          </TabItem>
+        </TabItemContainer>
       </CategoryContainer>
     </Container>
   );

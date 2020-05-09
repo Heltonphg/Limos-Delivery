@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
-
+import snackBar from './snackbar';
 const reducers = combineReducers({
-  // Remova essa linha depois de adicionar seus ducks
-  example: () => [],
+  snackBar,
 });
 
 export default reducers;
