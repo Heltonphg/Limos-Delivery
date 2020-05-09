@@ -1,13 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-
-
+import { Container,Welcome,WelcomeText,HungerText } from './styles';
+import HeaderMain from '~/pages/Main/Header';
 export default function Main() {
   return (
-    <View>
-
-    </View>
+    <Container>
+      <HeaderMain />
+      <Welcome>
+        <WelcomeText>Olá, Helton</WelcomeText>
+        <HungerText>O que deseja comer hoje?</HungerText>
+      </Welcome>
+    </Container>
   );
-
-
 }

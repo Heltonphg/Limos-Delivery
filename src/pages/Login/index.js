@@ -66,7 +66,7 @@ export default function Login({navigation}) {
             <EsqueciSenhaText>Esqueci minha senha</EsqueciSenhaText>
           </EsqueciSenha>
 
-          <ButtonEntrar>
+          <ButtonEntrar onPress ={()=> navigation.navigate('Main')}>
             <ButtonEntrarText>ENTRAR</ButtonEntrarText>
           </ButtonEntrar>
 

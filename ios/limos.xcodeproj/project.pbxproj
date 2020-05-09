@@ -33,6 +33,13 @@
 		2992FEA5001C49708BB79C36 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBFCE26197E498C8CEA7486 /* Octicons.ttf */; };
 		DA4ECE0AED1541ACA2158A46 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7B7A2416644DBBB7A0980C /* SimpleLineIcons.ttf */; };
 		43BB00DAD6824899A8452E52 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FD3DF0056BB4AC1915D4E0F /* Zocial.ttf */; };
+		CD957DCBD7BB4A6693A3CAC7 /* Lora-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E29ADA0EDF04A69819663F9 /* Lora-Italic-VariableFont_wght.ttf */; };
+		341782E99BE240188D613B0A /* Lora-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53393C6EC1C245D79F48DC44 /* Lora-VariableFont_wght.ttf */; };
+		C1BB3DADE3964E67BDE9753A /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBE5C8D44F14877AD6317BF /* Lora-Italic.ttf */; };
+		16FFC9F889E34CBCA942D964 /* Lora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642DD15DCEC47628290DE40 /* Lora.ttf */; };
+		5FC176F12D884AA49E0FFF0F /* Libre-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC7AC4489D3945A8B7E3F14E /* Libre-Bold.ttf */; };
+		5ED5B2D7EEFD468C9DC52E67 /* Libre-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3BEB72899A346F69D734A04 /* Libre-Italic.ttf */; };
+		3D288C447E2E4D9B93EAC4F8 /* Libre-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C50B6F5AB0E94D6698B29FBB /* Libre-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +92,13 @@
 		6DBFCE26197E498C8CEA7486 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3E7B7A2416644DBBB7A0980C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5FD3DF0056BB4AC1915D4E0F /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E29ADA0EDF04A69819663F9 /* Lora-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Lora-Italic-VariableFont_wght.ttf"; path = "../src/assets/fonts/Lora-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		53393C6EC1C245D79F48DC44 /* Lora-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Lora-VariableFont_wght.ttf"; path = "../src/assets/fonts/Lora-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BCBE5C8D44F14877AD6317BF /* Lora-Italic.ttf */ = {isa = PBXFileReference; name = "Lora-Italic.ttf"; path = "../src/assets/fonts/Lora-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4642DD15DCEC47628290DE40 /* Lora.ttf */ = {isa = PBXFileReference; name = "Lora.ttf"; path = "../src/assets/fonts/Lora.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BC7AC4489D3945A8B7E3F14E /* Libre-Bold.ttf */ = {isa = PBXFileReference; name = "Libre-Bold.ttf"; path = "../src/assets/fonts/Libre-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E3BEB72899A346F69D734A04 /* Libre-Italic.ttf */ = {isa = PBXFileReference; name = "Libre-Italic.ttf"; path = "../src/assets/fonts/Libre-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C50B6F5AB0E94D6698B29FBB /* Libre-Regular.ttf */ = {isa = PBXFileReference; name = "Libre-Regular.ttf"; path = "../src/assets/fonts/Libre-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +226,13 @@
 				6DBFCE26197E498C8CEA7486 /* Octicons.ttf */,
 				3E7B7A2416644DBBB7A0980C /* SimpleLineIcons.ttf */,
 				5FD3DF0056BB4AC1915D4E0F /* Zocial.ttf */,
+				6E29ADA0EDF04A69819663F9 /* Lora-Italic-VariableFont_wght.ttf */,
+				53393C6EC1C245D79F48DC44 /* Lora-VariableFont_wght.ttf */,
+				BCBE5C8D44F14877AD6317BF /* Lora-Italic.ttf */,
+				4642DD15DCEC47628290DE40 /* Lora.ttf */,
+				BC7AC4489D3945A8B7E3F14E /* Libre-Bold.ttf */,
+				E3BEB72899A346F69D734A04 /* Libre-Italic.ttf */,
+				C50B6F5AB0E94D6698B29FBB /* Libre-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -372,6 +393,13 @@
 				2992FEA5001C49708BB79C36 /* Octicons.ttf in Resources */,
 				DA4ECE0AED1541ACA2158A46 /* SimpleLineIcons.ttf in Resources */,
 				43BB00DAD6824899A8452E52 /* Zocial.ttf in Resources */,
+				CD957DCBD7BB4A6693A3CAC7 /* Lora-Italic-VariableFont_wght.ttf in Resources */,
+				341782E99BE240188D613B0A /* Lora-VariableFont_wght.ttf in Resources */,
+				C1BB3DADE3964E67BDE9753A /* Lora-Italic.ttf in Resources */,
+				16FFC9F889E34CBCA942D964 /* Lora.ttf in Resources */,
+				5FC176F12D884AA49E0FFF0F /* Libre-Bold.ttf in Resources */,
+				5ED5B2D7EEFD468C9DC52E67 /* Libre-Italic.ttf in Resources */,
+				3D288C447E2E4D9B93EAC4F8 /* Libre-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
