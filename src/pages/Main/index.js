@@ -5,7 +5,8 @@ import {
   WelcomeText,
   HungerText,
   FlatSnacks,
-  Title
+  Title,
+  ContainerList,
 } from './styles';
 import HeaderMain from '~/pages/Main/Header';
 import Categories from '~/pages/Main/Categories';
@@ -34,21 +35,18 @@ export default function Main({ navigation }) {
         <WelcomeText>Olá, Helton</WelcomeText>
         <HungerText>O que deseja comer hoje?</HungerText>
       </Welcome>
-
       <Categories />
-
-
-      <FlatSnacks
-        ListHeaderComponent={() => (
-          <Title>Lanchonetes</Title>
-        )}
-        keyboardShouldPersistTabs="handled"
-        data={snacks}
-        keyExtractor={(snack) => String(snack.id)}
-        renderItem={({ item }) => (
-          <SnackBar navigation={navigation} snack={item} />
-        )}
-      />
+      <Title>Lanchonetes</Title>
+      <ContainerList>
+        <FlatSnacks
+          keyboardShouldPersistTabs="handled"
+          data={snacks}
+          keyExtractor={(snack) => String(snack.id)}
+          renderItem={({ item }) => (
+            <SnackBar navigation={navigation} snack={item} />
+          )}
+        />
+      </ContainerList>
     </Container>
   );
 }

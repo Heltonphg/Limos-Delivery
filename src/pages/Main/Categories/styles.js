@@ -2,9 +2,8 @@ import styled from 'styled-components/native';
 import {colors, fonts} from '~/styles';
 
 export const Container = styled.View`
-  height:105px;
-  margin-top: 50px;
-  margin-bottom: 7px;
+  height: 105px;
+  margin-top: 13px;
 `;
 
 export const CategoryContainer = styled.ScrollView.attrs({
@@ -13,8 +12,8 @@ export const CategoryContainer = styled.ScrollView.attrs({
 })``;
 
 export const TabItem = styled.View`
-  width: 66px;
-  height: 66px;
+  width: 65px;
+  height: 65px;
   background: ${colors.whiter};
   border-radius: 6px;
   margin-left: 15px;
@@ -31,12 +30,9 @@ export const ImageIcon = styled.Image`
   width: 45px;
   height: 45px;
 `;
-
-
 export const Title = styled.Text`
   font-size: 18px;
   color: ${colors.secondary};
   margin-left: 15px;
-  padding-bottom: 5px;
   font-family: ${fonts.primary};
 `;

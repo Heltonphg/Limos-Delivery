@@ -14,6 +14,7 @@ import prato from '~/assets/prato.png';
 import pizza from '~/assets/pizza.png';
 import alcool from '~/assets/alcool.png';
 import porcoes from '~/assets/porcoes.png';
+import doces from '~/assets/doces.png';
 
 export default function Categories() {
   return (
@@ -41,6 +42,12 @@ export default function Categories() {
         <TabItemContainer>
           <TabItem>
             <ImageIcon source={porcoes} />
+          </TabItem>
+        </TabItemContainer>
+
+        <TabItemContainer>
+          <TabItem>
+            <ImageIcon source={doces} />
           </TabItem>
         </TabItemContainer>
 

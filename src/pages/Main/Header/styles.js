@@ -5,11 +5,11 @@ import { colors, fonts } from '~/styles';
 
 export const Container = styled.View`
   width: 100%;
-  height: 60px;
-  background-color: ${colors.primary};
+  height: 20px;
+  margin-bottom: -6px;
   align-items: center;
   padding: 30px 15px;
-  margin-top: 10px;
+  margin-top: 3px;
   flex-direction: row;
   justify-content: space-between;
 `;
