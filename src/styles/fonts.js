@@ -4,5 +4,6 @@ const isPlatform = Platform.OS === 'ios' ? 'Baloo Bhai' : 'Baloo-Regular';
 
 export default {
   primary: isPlatform,
-  secondary: 'Libre-Regular'
+  secondary: 'Libre-Regular',
+  terciary: 'Libre-Italic'
 };

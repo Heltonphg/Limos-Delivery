@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import io from 'socket.io-client';
 import {
   Container,
   Welcome,
@@ -21,12 +22,21 @@ export default function Main({ navigation }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    registerToSocket();
     snackbarsLoad();
   }, []);
+
+  function registerToSocket() {
+    const socket = io('http://10.0.0.107:3333');
+    socket.on('snack', (newSnack) => {
+      dispatch(SnackBarActions.alterarSnack(newSnack));
+    });
+  }
 
   function snackbarsLoad() {
     dispatch(SnackBarActions.snackbarsRequest());
   }
+
 
   return (
     <Container>

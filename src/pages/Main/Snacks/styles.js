@@ -9,6 +9,14 @@ export const Container = styled.View`
   border-radius: 6px;
 `;
 
+export const ContentText = styled.View`
+  flex: 1;
+  height: 35px;
+  padding: 0 10px;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Content = styled.View`
   flex: 1;
   justify-content: center;
@@ -20,7 +28,7 @@ export const Avaliation = styled.View`
   flex-direction: row;
   width: 40px;
   margin-left: 7px;
-  margin-top: 2px;
+  margin-top: 5px;
   border-radius: 2px;
   justify-content: center;
   align-items: center;
@@ -43,10 +51,14 @@ export const FechamentoText = styled.Text`
   text-align: center;
   margin-bottom: 1px;
   color: ${colors.darkTransparent};
-    font-family: ${fonts.secondary};
+  font-family: ${fonts.secondary};
 `;
 
 export const Background = styled.ImageBackground`
   width: 100%;
   height: 75%;
 `;
+
+export const Action = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7,
+})``;

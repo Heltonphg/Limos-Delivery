@@ -8,11 +8,11 @@ import store from './store';
 import createNavigator from '~/routes';
 const Routes = createNavigator(false);
 
-import {colors} from '~/styles';
+import { colors } from '~/styles';
 
 const App = () => (
   <Provider store={store}>
-          <StatusBar barStyle="default" backgroundColor={colors.secondary}/>
+    <StatusBar barStyle="default" backgroundColor={colors.secondary} />
     <Routes />
   </Provider>
 );

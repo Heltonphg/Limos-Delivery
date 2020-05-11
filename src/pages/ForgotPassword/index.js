@@ -12,10 +12,10 @@ import {
 
 import { Input, InputContainer, InputWrapper } from '../Login/styles';
 
-export default function ForgotPassword({ navigation }) {
+export default function ForgotPassword( ) {
   return (
     <Container>
-      <Header navigation={navigation} title={'Recuperar Senha'} buttonBack={true} />
+      <Header title={'Recuperar Senha'} buttonBack={true} />
       <Content>
         <FirstText>
           Para receber uma nova senha, insira o{' '}

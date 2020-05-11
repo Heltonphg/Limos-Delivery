@@ -7,11 +7,11 @@ export const Container = styled.View`
 `;
 
 export const ContainerList = styled.View`
-  flex: 1;
+  flex: 0.41;
 `;
 
 export const Welcome = styled.View`
-  flex: 0.15;
+  flex: 0.12;
   padding: 5px 15px;
   justify-content: center;
 `;
@@ -32,7 +32,7 @@ export const Title = styled.Text`
   font-size: 18px;
   color: ${colors.secondary};
   font-family: ${fonts.primary};
-  padding: 2px 15px;
+  padding: 5px 15px 0 15px;
 `;
 
 export const FlatSnacks = styled.FlatList.attrs({

@@ -6,10 +6,9 @@ import {
   HeaderLeftButtonBox,
   HeaderTextBox,
 } from './styles';
+import { withNavigation } from 'react-navigation';
 
-export default function Header({ title, buttonBack, navigation }) {
-
-
+function Header({ title, buttonBack, navigation }) {
   function goBack() {
     navigation.goBack();
   }
@@ -30,3 +29,4 @@ export default function Header({ title, buttonBack, navigation }) {
     </Container>
   );
 }
+export default  withNavigation(Header)

@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import {colors, fonts} from '~/styles';
 
 export const Container = styled.View`
-  height: 105px;
+  height: 115px;
   margin-top: 13px;
 `;
 
@@ -24,6 +24,7 @@ export const TabItem = styled.View`
 
 export const TabItemContainer = styled.View`
   justify-content: center;
+  align-items: center;
 `;
 
 export const ImageIcon = styled.Image`
@@ -35,4 +36,10 @@ export const Title = styled.Text`
   color: ${colors.secondary};
   margin-left: 15px;
   font-family: ${fonts.primary};
+`;
+export const CategoryText = styled.Text`
+  font-size: 12px;
+  color: ${colors.darkTransparent};
+  margin-left: 15px;
+  font-family: ${fonts.terciary};
 `;

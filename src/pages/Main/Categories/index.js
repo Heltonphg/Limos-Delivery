@@ -4,9 +4,9 @@ import {
   CategoryContainer,
   TabItem,
   ImageIcon,
-  TextIcon,
   Title,
   TabItemContainer,
+  CategoryText,
 } from './styles';
 
 import burguer from '~/assets/burger.png';
@@ -25,36 +25,42 @@ export default function Categories() {
           <TabItem>
             <ImageIcon source={pizza} />
           </TabItem>
+          <CategoryText>Pizzas</CategoryText>
         </TabItemContainer>
 
         <TabItemContainer>
           <TabItem>
             <ImageIcon source={burguer} />
           </TabItem>
+          <CategoryText>Lanches</CategoryText>
         </TabItemContainer>
 
         <TabItemContainer>
           <TabItem>
             <ImageIcon source={alcool} />
           </TabItem>
+          <CategoryText>Bebidas</CategoryText>
         </TabItemContainer>
 
         <TabItemContainer>
           <TabItem>
             <ImageIcon source={porcoes} />
           </TabItem>
+          <CategoryText>Porções</CategoryText>
         </TabItemContainer>
 
         <TabItemContainer>
           <TabItem>
             <ImageIcon source={doces} />
           </TabItem>
+          <CategoryText>Doces</CategoryText>
         </TabItemContainer>
 
         <TabItemContainer style={{ paddingRight: 10 }}>
           <TabItem>
             <ImageIcon source={prato} />
           </TabItem>
+          <CategoryText>Almoços</CategoryText>
         </TabItemContainer>
       </CategoryContainer>
     </Container>
