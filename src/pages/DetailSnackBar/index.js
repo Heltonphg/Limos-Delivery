@@ -10,10 +10,12 @@ import {
   Name,
   Header,
   Content,
+  Body
 } from './styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useSelector } from 'react-redux';
 import Categories from "~/pages/Main/Categories";
+import {colors} from "~/styles";
 
 export default function DetailSnackBar({ navigation }) {
   const snackbar = useSelector((state) => state.snackBar.snack);
@@ -22,9 +24,9 @@ export default function DetailSnackBar({ navigation }) {
     <Container>
       <Header>
         <SnackDetails>
-          <Background source={{ uri: snackbar && snackbar.logo }} blurRadius={2} />
+          <Background source={{ uri: snackbar && snackbar.logo }} blurRadius={1} />
           <BackButton onPress={() => navigation.goBack()}>
-            <Icon name="arrow-back" size={24} color="#FFF" />
+            <Icon name="arrow-back" size={24} color={colors.white} />
           </BackButton>
 
           <ContentLogo>
@@ -33,11 +35,10 @@ export default function DetailSnackBar({ navigation }) {
           </ContentLogo>
         </SnackDetails>
       </Header>
-      <Content>
+      <Body>
         <Name>{ snackbar && snackbar.name}</Name>
-
-      </Content>
-
+        <Categories/>
+      </Body>
     </Container>
   );
 }

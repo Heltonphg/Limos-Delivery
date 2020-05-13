@@ -4,6 +4,7 @@ export default {
 
   darker: '#2a2a44',
   whiter: '#f7f6fc',
+  white: '#f5f5f5',
 
   transparent: 'transparent',
   darkTransparent: 'rgba(0,0,0,0.6)',

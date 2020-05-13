@@ -4,7 +4,7 @@ import { IconSide, Container, CurrentLocation,CurrentText,IconCart } from './sty
 export default function HeaderMain() {
   return (
     <Container>
-      <IconSide name="menu" size={22} color="#f5f5f5" />
+      <IconSide name="gps-fixed" size={22} color="#f5f5f5" />
       <CurrentLocation>
         <CurrentText>Antônio Martins</CurrentText>
       </CurrentLocation>

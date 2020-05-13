@@ -9,9 +9,10 @@ export const Container = styled.View`
 export const Header = styled.View`
   flex: 0.3;
   background: transparent;
-`;export const Content = styled.View`
+`;
+
+;export const Body = styled.View`
   flex: 0.7;
-  padding: 0 15px;
 `;
 
 export const SnackDetails = styled.View`
@@ -38,6 +39,7 @@ export const Name = styled.Text`
   font-size: 23px;
   font-family: ${fonts.terciary};
   color: ${colors.secondary};
+  padding-left: 15px;
 `;
 
 export const Cover = styled.Image`
@@ -62,9 +64,9 @@ export const Title = styled.Text`
 `;
 
 export const BackButton = styled.TouchableOpacity.attrs({
-  hitSlop: { top: 5, left: 5, right: 5, bottom: 5 },
+  hitSlop: { top: 10, left: 10, right: 10, bottom: 10 },
 })`
   position: absolute;
-  left: 18px;
+  left: 10px;
   top: 20px;
 `;

@@ -12,8 +12,8 @@ export const CategoryContainer = styled.ScrollView.attrs({
 })``;
 
 export const TabItem = styled.View`
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   background: ${colors.whiter};
   border-radius: 6px;
   margin-left: 15px;
@@ -32,13 +32,13 @@ export const ImageIcon = styled.Image`
   height: 45px;
 `;
 export const Title = styled.Text`
-  font-size: 18px;
+  font-size: 17px;
   color: ${colors.secondary};
   margin-left: 15px;
   font-family: ${fonts.primary};
 `;
 export const CategoryText = styled.Text`
-  font-size: 12px;
+  font-size: 11px;
   color: ${colors.darkTransparent};
   margin-left: 15px;
   font-family: ${fonts.terciary};

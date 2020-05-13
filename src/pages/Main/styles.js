@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { colors, fonts } from '../../styles';
+import Icon from "react-native-vector-icons/Ionicons";
 
 export const Container = styled.View`
   flex: 1;
@@ -7,7 +8,8 @@ export const Container = styled.View`
 `;
 
 export const ContainerList = styled.View`
-  flex: 0.41;
+  flex: 0.37;
+  
 `;
 
 export const Welcome = styled.View`
@@ -29,7 +31,7 @@ export const HungerText = styled.Text`
 `;
 
 export const Title = styled.Text`
-  font-size: 18px;
+  font-size: 17px;
   color: ${colors.secondary};
   font-family: ${fonts.primary};
   padding: 5px 15px 0 15px;
@@ -38,8 +40,41 @@ export const Title = styled.Text`
 export const FlatSnacks = styled.FlatList.attrs({
   horizontal: true,
   showsHorizontalScrollIndicator: false,
-  contentContainerStyle: { paddingHorizontal: 10},
+  contentContainerStyle: { paddingHorizontal: 10 },
   maxToRenderPerBatch: 10,
   initialNumToRender: 10,
+})``;
+
+export const ContainerSearch = styled.View`
+  width: 100%;
+  height: 50px;
+  padding: 0 15px 0 15px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Input = styled.TextInput.attrs({
+  placeholderTextColor: colors.secondary,
 })`
+  flex: 1;
+  height: 60px;
+  color: ${colors.secondary};
+`;
+
+export const InputIcon = styled(Icon).attrs({
+  size: 25,
+})`
+  color: ${colors.secondary};
+  margin-right: 5px;
+  margin-left: 5px;
+`;
+
+export const InputWrapper = styled.View`
+  height: 45px;
+  flex-direction: row;
+  background-color: ${colors.white};
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 `;

@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 import { colors, fonts } from '~/styles';
 
 export const Container = styled.View`
-  width: 165px;
-  height: 190px;
+  width: 155px;
+  height: 185px;
   background-color: ${colors.whiter};
   margin-left: 5px;
   border-radius: 6px;
