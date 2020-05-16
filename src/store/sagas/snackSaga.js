@@ -1,4 +1,4 @@
-import { all, call, put, select, takeLatest } from 'redux-saga/effects';
+import { all, call, put, delay, takeLatest } from 'redux-saga/effects';
 import { SnackBarActions, Types } from '../ducks/snackbar';
 import api from '~/services/api';
 const token =
@@ -9,6 +9,7 @@ function* loadSnacks() {
     const { data } = yield call(api.get, '/snackbar', {
       headers: { Authorization: `Bearer ${token}` },
     });
+    yield delay(2000);
     yield put(SnackBarActions.snackbarsSuccess(data));
   } catch (e) {
     console.log(e);

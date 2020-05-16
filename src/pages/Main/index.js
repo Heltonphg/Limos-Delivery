@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 import io from 'socket.io-client';
 import {
   Container,
@@ -9,6 +8,9 @@ import {
   FlatSnacks,
   Title,
   ContainerList,
+  Load,
+  LoadContainer,
+  ShimmerLoad,
 } from './styles';
 import HeaderMain from '~/pages/Main/Header';
 import SnackBar from '~/pages/Main/Snacks';
@@ -47,7 +49,20 @@ export default function Main({ navigation }) {
       </Welcome>
 
       <Title>Lanchonetes abertas</Title>
-      <ContainerList>
+      {loading ? (
+        <LoadContainer>
+          <ShimmerLoad autoRun={true} visible={!loading}>
+            <Load />
+          </ShimmerLoad>
+          <ShimmerLoad autoRun={true} visible={!loading}>
+            <Load />
+          </ShimmerLoad>
+          <ShimmerLoad autoRun={true} visible={!loading}>
+            <Load />
+          </ShimmerLoad>
+        </LoadContainer>
+      ) : (
+        <ContainerList>
           <FlatSnacks
             keyboardShouldPersistTabs="handled"
             data={snacks}
@@ -56,7 +71,8 @@ export default function Main({ navigation }) {
               <SnackBar navigation={navigation} snack={item} />
             )}
           />
-      </ContainerList>
+        </ContainerList>
+      )}
     </Container>
   );
 }

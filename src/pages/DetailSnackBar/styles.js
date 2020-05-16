@@ -7,20 +7,13 @@ export const Container = styled.View`
   background: #fff;
 `;
 
-export const ContainerHeader = styled.View`
-  flex: 1;
-`;
-export const Body = styled.View`
-  flex: 1;
-  background: red;
-`;
-
 export const Header = styled.View`
-  flex: 0.26;
+  width: 100%;
+  height: 180px;
 `;
 
 export const BodyHeader = styled.View`
-  flex: 0.3;
+  flex: 0.4;
 `;
 
 export const Options = styled.View`
@@ -31,11 +24,10 @@ export const Options = styled.View`
   align-items: center;
 `;
 
-export const SnackDetails = styled.View`
-`;
+export const SnackDetails = styled.View``;
 
 export const Background = styled.ImageBackground.attrs({
-  resizeMode: 'stretch'
+  resizeMode: 'stretch',
 })`
   width: 100%;
   height: 100%;
@@ -65,11 +57,6 @@ export const ContentLogo = styled.View`
   border-radius: 8px;
 `;
 
-export const Title = styled.Text`
-  font-size: 16px;
-  color: #fff;
-`;
-
 export const BackButton = styled.TouchableOpacity.attrs({
   hitSlop: { top: 10, left: 10, right: 10, bottom: 10 },
 })``;
@@ -80,7 +67,8 @@ export const Details = styled.View`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-bottom: -1px;
+  margin-bottom: -2px;
+  margin-top: 1px;
 `;
 export const InfoContainer = styled.View`
   margin: 0 3px;
@@ -98,9 +86,10 @@ export const InfoTitle = styled.Text`
   font-family: ${fonts.secondary};
   color: ${colors.darker};
 `;
+
 export const Info = styled.Text`
   font-size: 12px;
-   text-align: center;
+  text-align: center;
   font-family: ${fonts.terciary};
   color: ${colors.secondary};
 `;
@@ -110,4 +99,7 @@ export const ImgContainer = styled.View`
   height: 100%;
 `;
 
-
+export const ListContainer = styled.View`
+  flex: 0.6;
+  margin: 5px 15px;
+`;

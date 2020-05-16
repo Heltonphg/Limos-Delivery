@@ -17,9 +17,6 @@ export const ContentText = styled.View`
   align-items: center;
 `;
 
-export const ContainerImage = styled.View`
-  
-`;
 
 export const Content = styled.View`
   flex: 1;

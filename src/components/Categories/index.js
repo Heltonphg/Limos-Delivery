@@ -10,7 +10,6 @@ import {
 } from './styles';
 
 import burguer from '~/assets/burger.png';
-import prato from '~/assets/prato.png';
 import pizza from '~/assets/pizza.png';
 import alcool from '~/assets/alcool.png';
 import porcoes from '~/assets/porcoes.png';
@@ -21,47 +20,45 @@ export default function Categories() {
     <Container>
       <Title>Categorias</Title>
       <CategoryContainer>
-        <TabItemContainer>
+        <TabItemContainer style={{ paddingLeft: 9 }}>
           <TabItem>
             <ImageIcon source={pizza} />
+            <CategoryText>Pizzas</CategoryText>
           </TabItem>
-          <CategoryText>Pizzas</CategoryText>
         </TabItemContainer>
 
         <TabItemContainer>
           <TabItem>
             <ImageIcon source={burguer} />
+            <CategoryText>Lanches</CategoryText>
           </TabItem>
-          <CategoryText>Lanches</CategoryText>
+
         </TabItemContainer>
 
         <TabItemContainer>
           <TabItem>
             <ImageIcon source={alcool} />
+            <CategoryText>Bebidas</CategoryText>
           </TabItem>
-          <CategoryText>Bebidas</CategoryText>
+
         </TabItemContainer>
 
         <TabItemContainer>
           <TabItem>
             <ImageIcon source={porcoes} />
+            <CategoryText>Porções</CategoryText>
           </TabItem>
-          <CategoryText>Porções</CategoryText>
-        </TabItemContainer>
 
-        <TabItemContainer>
-          <TabItem>
-            <ImageIcon source={doces} />
-          </TabItem>
-          <CategoryText>Doces</CategoryText>
         </TabItemContainer>
 
         <TabItemContainer style={{ paddingRight: 10 }}>
           <TabItem>
-            <ImageIcon source={prato} />
+            <ImageIcon source={doces} />
+            <CategoryText>Doces</CategoryText>
           </TabItem>
-          <CategoryText>Almoços</CategoryText>
+
         </TabItemContainer>
+
       </CategoryContainer>
     </Container>
   );

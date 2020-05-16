@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { colors, fonts } from '../../styles';
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from 'react-native-vector-icons/Ionicons';
+import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
 export const Container = styled.View`
   flex: 1;
@@ -9,7 +10,25 @@ export const Container = styled.View`
 
 export const ContainerList = styled.View`
   flex: 0.37;
-  
+`;
+export const LoadContainer = styled.View`
+  flex: 0.37;
+  flex-direction: row;
+`;
+
+export const Load = styled.View`
+  width: 145px;
+  height: 125px;
+   border-radius: 6px;
+  background-color: ${colors.whiter};
+  margin-left: 15px;
+`;
+
+export const ShimmerLoad = styled(ShimmerPlaceHolder)`
+  width: 145px;
+  height: 130px;
+  border-radius: 6px;
+  margin-left: 10px;
 `;
 
 export const Welcome = styled.View`

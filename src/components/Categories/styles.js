@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
-import {colors, fonts} from '~/styles';
+import { colors, fonts } from '~/styles';
 
 export const Container = styled.View`
-  height: 115px;
+  height: 78px;
   margin-top: 5px;
+  justify-content: center;
 `;
 
 export const CategoryContainer = styled.ScrollView.attrs({
@@ -12,14 +13,15 @@ export const CategoryContainer = styled.ScrollView.attrs({
 })``;
 
 export const TabItem = styled.View`
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 39px;
   background: ${colors.whiter};
   border-radius: 6px;
-  margin-left: 15px;
+  margin-left: 6px;
   align-self: center;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 `;
 
 export const TabItemContainer = styled.View`
@@ -28,8 +30,8 @@ export const TabItemContainer = styled.View`
 `;
 
 export const ImageIcon = styled.Image`
-  width: 45px;
-  height: 45px;
+  width: 27px;
+  height: 27px;
 `;
 export const Title = styled.Text`
   font-size: 17px;
@@ -38,8 +40,8 @@ export const Title = styled.Text`
   font-family: ${fonts.primary};
 `;
 export const CategoryText = styled.Text`
-  font-size: 11px;
+  font-size: 12px;
   color: ${colors.darkTransparent};
-  margin-left: 15px;
+  margin-left: 7px;
   font-family: ${fonts.terciary};
 `;

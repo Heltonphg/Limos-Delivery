@@ -1,6 +1,5 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import {
   Title,
   Container,
@@ -10,23 +9,22 @@ import {
   AvaliationText,
   FechamentoText,
   Action,
-  ContentText
+  ContentText,
 } from './styles';
 import { colors } from '~/styles';
 import { SnackBarActions } from '~/store/ducks/snackbar';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function SnackBar({ navigation, snack }) {
   const dispatch = useDispatch();
-  const load = useSelector((state) => state.snackBar.loading);
 
   async function detailSnackBar(id) {
-    navigation.navigate('DetailSnackBar')
+    navigation.navigate('DetailSnackBar');
     dispatch(SnackBarActions.detailSnackRequest(id));
   }
 
   return (
-    <Action onPress ={() => detailSnackBar(snack.id)}>
+    <Action onPress={() => detailSnackBar(snack.id)}>
       <Container
         style={{
           overflow: 'hidden',
@@ -37,8 +35,7 @@ export default function SnackBar({ navigation, snack }) {
             borderBottomRightRadius: 6,
             overflow: 'hidden',
           }}
-          source={{ uri: snack.logoimg }}
-        >
+          source={{ uri: snack.logoimg }}>
           <Avaliation>
             <AvaliationText>{snack.geral_avaliation}</AvaliationText>
             <Icon name="ios-star" size={12} color={colors.whiter} />
