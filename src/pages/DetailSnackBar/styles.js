@@ -7,12 +7,20 @@ export const Container = styled.View`
   background: #fff;
 `;
 
+export const ContainerHeader = styled.View`
+  flex: 1;
+`;
+export const Body = styled.View`
+  flex: 1;
+  background: red;
+`;
+
 export const Header = styled.View`
   flex: 0.26;
 `;
 
-export const Body = styled.View`
-  flex: 0.75;
+export const BodyHeader = styled.View`
+  flex: 0.3;
 `;
 
 export const Options = styled.View`
@@ -24,15 +32,14 @@ export const Options = styled.View`
 `;
 
 export const SnackDetails = styled.View`
-  align-items: center;
 `;
 
 export const Background = styled.ImageBackground.attrs({
+  resizeMode: 'stretch'
 })`
-  position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
+  opacity: 0.6;
 `;
 
 export const Name = styled.Text`
@@ -73,7 +80,7 @@ export const Details = styled.View`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-bottom: -5px;
+  margin-bottom: -1px;
 `;
 export const InfoContainer = styled.View`
   margin: 0 3px;
@@ -102,3 +109,5 @@ export const ImgContainer = styled.View`
   width: 100%;
   height: 100%;
 `;
+
+
