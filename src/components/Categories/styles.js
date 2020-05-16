@@ -3,7 +3,7 @@ import {colors, fonts} from '~/styles';
 
 export const Container = styled.View`
   height: 115px;
-  margin-top: 13px;
+  margin-top: 5px;
 `;
 
 export const CategoryContainer = styled.ScrollView.attrs({

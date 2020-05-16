@@ -17,6 +17,10 @@ export const ContentText = styled.View`
   align-items: center;
 `;
 
+export const ContainerImage = styled.View`
+  
+`;
+
 export const Content = styled.View`
   flex: 1;
   justify-content: center;
@@ -62,3 +66,5 @@ export const Background = styled.ImageBackground`
 export const Action = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7,
 })``;
+
+

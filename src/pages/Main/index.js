@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator } from 'react-native';
+import React, { useEffect } from 'react';
 
 import io from 'socket.io-client';
 import {
@@ -16,7 +15,6 @@ import SnackBar from '~/pages/Main/Snacks';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { SnackBarActions } from '~/store/ducks/snackbar';
-import { colors } from '~/styles';
 
 export default function Main({ navigation }) {
   const snacks = useSelector((state) => state.snackBar.snackbars);
@@ -50,21 +48,6 @@ export default function Main({ navigation }) {
 
       <Title>Lanchonetes abertas</Title>
       <ContainerList>
-        <FlatSnacks
-          keyboardShouldPersistTabs="handled"
-          data={snacks}
-          keyExtractor={(snack) => String(snack.id)}
-          renderItem={({ item }) => (
-            <SnackBar navigation={navigation} snack={item} />
-          )}
-        />
-      </ContainerList>
-      <Title>Lanchonetes fechadas</Title>
-
-      <ContainerList>
-        {loading ? (
-          <ActivityIndicator size="large" color={colors.secondary} />
-        ) : (
           <FlatSnacks
             keyboardShouldPersistTabs="handled"
             data={snacks}
@@ -73,7 +56,6 @@ export default function Main({ navigation }) {
               <SnackBar navigation={navigation} snack={item} />
             )}
           />
-        )}
       </ContainerList>
     </Container>
   );

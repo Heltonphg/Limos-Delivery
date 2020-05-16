@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+
 import {
   Title,
   Container,
@@ -13,12 +14,13 @@ import {
 } from './styles';
 import { colors } from '~/styles';
 import { SnackBarActions } from '~/store/ducks/snackbar';
-import { useDispatch } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 export default function SnackBar({ navigation, snack }) {
   const dispatch = useDispatch();
+  const load = useSelector((state) => state.snackBar.loading);
 
-  function detailSnackBar(id) {
+  async function detailSnackBar(id) {
     navigation.navigate('DetailSnackBar')
     dispatch(SnackBarActions.detailSnackRequest(id));
   }
@@ -35,7 +37,7 @@ export default function SnackBar({ navigation, snack }) {
             borderBottomRightRadius: 6,
             overflow: 'hidden',
           }}
-          source={{ uri: snack.logo }}>
+          source={{ uri: snack.logoimg }}>
           <Avaliation>
             <AvaliationText>{snack.geral_avaliation}</AvaliationText>
             <Icon name="ios-star" size={12} color={colors.whiter} />
@@ -45,8 +47,6 @@ export default function SnackBar({ navigation, snack }) {
           <ContentText>
             <Title numberOfLines={1}>{snack.name}</Title>
           </ContentText>
-
-
         </Content>
         <FechamentoText>Fecha as 23:00</FechamentoText>
       </Container>
