@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BackButton,
   Background,
@@ -99,8 +99,8 @@ export default function DetailSnackBar({ navigation }) {
               <InfoTitle>Cidade</InfoTitle>
               <Info>
                 {snackbar &&
-                snackbar.snack_address &&
-                snackbar.snack_address.city}
+                  snackbar.snack_address &&
+                  snackbar.snack_address.city}
               </Info>
             </InfoContainer>
             <InfoContainer>
@@ -109,7 +109,7 @@ export default function DetailSnackBar({ navigation }) {
             </InfoContainer>
             <InfoContainer>
               <InfoTitle>Mínimo</InfoTitle>
-              <Info>{JSON.stringify(loading)}</Info>
+              <Info>R$10</Info>
             </InfoContainer>
             <InfoContainer>
               <InfoTitle>Tempo</InfoTitle>

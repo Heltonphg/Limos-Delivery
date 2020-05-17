@@ -17,6 +17,7 @@ import SnackBar from '~/pages/Main/Snacks';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { SnackBarActions } from '~/store/ducks/snackbar';
+import {CatActions} from "~/store/ducks/categories";
 
 export default function Main({ navigation }) {
   const snacks = useSelector((state) => state.snackBar.snackbars);
@@ -34,10 +35,14 @@ export default function Main({ navigation }) {
     socket.on('snack', (newSnack) => {
       dispatch(SnackBarActions.alterarSnack(newSnack));
     });
+    socket.on('new_snack', (newSnack) => {
+      dispatch(SnackBarActions.ioSnackAdd(newSnack));
+    });
   }
 
   function snackbarsLoad() {
     dispatch(SnackBarActions.snackbarsRequest());
+    dispatch(CatActions.categoryRequest());
   }
 
   return (

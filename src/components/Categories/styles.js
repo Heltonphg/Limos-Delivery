@@ -1,15 +1,16 @@
 import styled from 'styled-components/native';
 import { colors, fonts } from '~/styles';
+import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
 export const Container = styled.View`
   height: 78px;
   margin-top: 5px;
-  justify-content: center;
 `;
 
-export const CategoryContainer = styled.ScrollView.attrs({
+export const CategoryList = styled.FlatList.attrs({
   horizontal: true,
   showsHorizontalScrollIndicator: false,
+  contentContainerStyle: { paddingHorizontal: 9 },
 })``;
 
 export const TabItem = styled.View`
@@ -24,7 +25,9 @@ export const TabItem = styled.View`
   flex-direction: row;
 `;
 
-export const TabItemContainer = styled.View`
+export const TabItemContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.4,
+})`
   justify-content: center;
   align-items: center;
 `;
@@ -39,9 +42,38 @@ export const Title = styled.Text`
   margin-left: 15px;
   font-family: ${fonts.primary};
 `;
+
 export const CategoryText = styled.Text`
-  font-size: 12px;
+  font-size: 13px;
   color: ${colors.darkTransparent};
-  margin-left: 7px;
+  margin-left: 6px;
   font-family: ${fonts.terciary};
+`;
+
+export const NoCategory = styled.Text`
+  font-size: 15px;
+  color: ${colors.darker};
+  text-align: center;
+  font-family: ${fonts.secondary};
+`;
+
+export const Shimmer = styled.View`
+  width: 20px;
+  height: 40px;
+  margin-left: 11px;
+  margin-top: 10px;
+`;
+export const ContLoad = styled.View`
+  flex: 1;
+  height: 30px;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0 15px;
+`;
+
+export const ShimmerLoad = styled(ShimmerPlaceHolder)`
+  width: 80px;
+  height: 30px;
+  border-radius: 3px;
+  margin-left: 5px;
 `;

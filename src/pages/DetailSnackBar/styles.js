@@ -12,8 +12,23 @@ export const Header = styled.View`
   height: 180px;
 `;
 
+export const InfoContainer = styled.View`
+  margin: 0 3px;
+  padding: 0 4px;
+  height: 35px;
+  justify-content: center;
+  background: ${colors.whiter};
+  border-radius: 5px;
+`;
+
+export const CotainerName = styled.View`
+  width: 77%;
+  height: 51px;
+  justify-content: center;
+`;
+
 export const BodyHeader = styled.View`
-  flex: 0.4;
+  flex: 0.34;
 `;
 
 export const Options = styled.View`
@@ -22,6 +37,27 @@ export const Options = styled.View`
   justify-content: space-between;
   padding: 10px 10px;
   align-items: center;
+`;
+
+export const ContentLogo = styled.View`
+  position: absolute;
+  top: 145px;
+  left: 275px;
+  right: 0px;
+  bottom: 0px;
+  width: 75px;
+  height: 75px;
+  border-radius: 8px;
+`;
+
+export const Details = styled.View`
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: -2px;
+  margin-top: 1px;
 `;
 
 export const SnackDetails = styled.View``;
@@ -34,6 +70,12 @@ export const Background = styled.ImageBackground.attrs({
   opacity: 0.6;
 `;
 
+export const Cover = styled.Image`
+  width: 75px;
+  height: 75px;
+  border-radius: 8px;
+`;
+
 export const Name = styled.Text`
   font-size: 19px;
   font-family: ${fonts.secondary};
@@ -41,44 +83,9 @@ export const Name = styled.Text`
   padding-left: 15px;
 `;
 
-export const Cover = styled.Image`
-  width: 75px;
-  height: 75px;
-  border-radius: 8px;
-`;
-export const ContentLogo = styled.View`
-  position: absolute;
-  top: 145px;
-  left: 275px;
-  right: 0px;
-  bottom: 0px;
-  width: 75px;
-  height: 75px;
-  border-radius: 8px;
-`;
-
 export const BackButton = styled.TouchableOpacity.attrs({
   hitSlop: { top: 10, left: 10, right: 10, bottom: 10 },
 })``;
-
-export const Details = styled.View`
-  width: 100%;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  margin-bottom: -2px;
-  margin-top: 1px;
-`;
-export const InfoContainer = styled.View`
-  margin: 0 3px;
-`;
-
-export const CotainerName = styled.View`
-  width: 77%;
-  height: 51px;
-  justify-content: center;
-`;
 
 export const InfoTitle = styled.Text`
   font-size: 13px;
@@ -100,6 +107,6 @@ export const ImgContainer = styled.View`
 `;
 
 export const ListContainer = styled.View`
-  flex: 0.6;
-  margin: 5px 15px;
+  flex: 0.68;
+  margin: 0 15px;
 `;

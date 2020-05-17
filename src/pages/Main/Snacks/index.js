@@ -37,7 +37,7 @@ export default function SnackBar({ navigation, snack }) {
           }}
           source={{ uri: snack.logoimg }}>
           <Avaliation>
-            <AvaliationText>{snack.geral_avaliation}</AvaliationText>
+            <AvaliationText>{snack.geral_avaliation ? snack.geral_avaliation :'...'}</AvaliationText>
             <Icon name="ios-star" size={12} color={colors.whiter} />
           </Avaliation>
         </Background>

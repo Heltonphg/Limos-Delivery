@@ -2,9 +2,11 @@
 export const Types = {
   SNACKBAR_REQUEST: 'SNACKBAR_REQUEST',
   SNACKBAR_SUCCESS: 'SNACKBAR_SUCCESS',
+  SNACKBAR_FAIL: 'SNACKBAR_FAIL',
   DATAIL_SNACK_REQUEST: 'DATAIL_SNACK_REQUEST',
   DATAIL_SNACK_SUCCESS: 'DATAIL_SNACK_SUCCESS',
   ALTERAR_SNACK: 'ALTERAR_SNACK',
+  IO_SNACK_ADD: 'IO_SNACK_ADD',
 };
 
 //Reducers
@@ -28,6 +30,12 @@ export default function snackBar(state = INITIAL_STATE, action) {
         snackbars: action.payload,
         loading: false,
       };
+    case Types.SNACKBAR_FAIL:
+      return {
+        ...state,
+        snackbars: [],
+        loading: false,
+      };
     case Types.DATAIL_SNACK_REQUEST:
       return {
         ...state,
@@ -46,6 +54,11 @@ export default function snackBar(state = INITIAL_STATE, action) {
           snack.id === action.payload.id ? action.payload : snack,
         ),
       };
+    case Types.IO_SNACK_ADD:
+      return {
+        ...state,
+        snackbars: [...state.snackbars, action.payload.snack]
+      };
     default:
       return state;
   }
@@ -61,9 +74,17 @@ export const SnackBarActions = {
     type: Types.SNACKBAR_SUCCESS,
     payload: snacks,
   }),
+  snackbarsFail: () => ({
+    type: Types.SNACKBAR_FAIL,
+    payload: {},
+  }),
   alterarSnack: (snack) => ({
     type: Types.ALTERAR_SNACK,
     payload: snack,
+  }),
+  ioSnackAdd: (snack) => ({
+    type: Types.IO_SNACK_ADD,
+    payload: { snack },
   }),
   detailSnackRequest: (id) => ({
     type: Types.DATAIL_SNACK_REQUEST,
