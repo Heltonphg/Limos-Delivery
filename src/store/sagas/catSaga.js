@@ -27,11 +27,12 @@ function* loadCategoryRequest(action) {
       }
     }
   }
-  yield put(CatActions.loadCategorySnack(arrayCatsSnacks));
+
+  yield put(CatActions.loadCategorySnackSuccess(arrayCatsSnacks));
 }
 export function* CatSagas() {
   return yield all([
     takeLatest(Types.CATEGORY_REQUEST, CategoryRequest),
-    takeLatest(Types.LOAD_CATEGORY_REQUEST, loadCategoryRequest),
+    takeLatest(Types.LOAD_CATEGORY_REQUEST_ONLY_SNACK, loadCategoryRequest),
   ]);
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { PacmanIndicator } from 'react-native-indicators';
 import {
   BackButton,
   Background,
@@ -17,18 +18,70 @@ import {
   Options,
   SnackDetails,
   ListContainer,
+  ProductContainer,
+  Title,
+  ProductImg,
+  Description,
+  ContainerInfoProduct,
+  Stars,
+  StarText
 } from './styles';
-import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { useSelector } from 'react-redux';
+import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
+import Carousel from 'react-native-snap-carousel';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import IonIcon from 'react-native-vector-icons/Ionicons';
+
+
+import { useDispatch, useSelector } from 'react-redux';
 import { colors } from '~/styles';
 
 import Categories from '~/components/Categories';
+import { ProductActions } from '~/store/ducks/products';
 
 export default function DetailSnackBar({ navigation }) {
+  const snack_id = navigation.getParam('snack_id', '');
+
+  const dispatch = useDispatch();
+
   const snackbar = useSelector((state) => state.snackBar.snack);
   const loading = useSelector((state) => state.snackBar.loadingDetail);
+  let current = useSelector((state) => state.categories.current);
+  const products = useSelector((state) => state.products.products);
+  const loadproducts = useSelector((state) => state.products.loading);
+
+  useEffect(() => {
+    handleProducts();
+  }, [current]);
+
+  useEffect(() => {
+    handleProducts();
+  }, []);
+
+  function handleProducts() {
+    if (!current) {
+      current = { id: '' };
+    }
+    dispatch(ProductActions.productRequest(snack_id, current.id));
+  }
+
+  function renderItem({item, index}){
+    return (
+      <ProductContainer>
+        <ProductImg
+        source ={{uri: item.img}}
+        />
+        <Stars>
+          <StarText>{item.avaliation ? item.avaliation : '...'}</StarText>
+          <IonIcon style={{marginBottom: 3}} name="ios-star" size={12} color={colors.secondary} />
+        </Stars>
+        <ContainerInfoProduct>
+          <Title>{item.name}</Title>
+          <Description>{item.description}</Description>
+        </ContainerInfoProduct>
+      </ProductContainer>
+    );
+  }
 
   return (
     <Container>
@@ -120,7 +173,18 @@ export default function DetailSnackBar({ navigation }) {
         <Categories />
       </BodyHeader>
       <ListContainer>
-
+        {loadproducts ? (
+          <PacmanIndicator color={colors.secondary} size={60} />
+        ) : (
+          <Carousel
+            layoutCardOffset={18}
+            data={products}
+            layout="default"
+            renderItem={renderItem}
+            sliderWidth={390}
+            itemWidth={220}
+          />
+        )}
       </ListContainer>
     </Container>
   );

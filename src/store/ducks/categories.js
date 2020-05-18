@@ -1,6 +1,6 @@
 export const Types = {
   CATEGORY_REQUEST: 'CATEGORY_REQUEST',
-  LOAD_CATEGORY_REQUEST: 'LOAD_CATEGORY_REQUEST',
+  LOAD_CATEGORY_REQUEST_ONLY_SNACK: 'LOAD_CATEGORY_REQUEST_ONLY_SNACK',
   CATEGORY_SUCCESS: 'CATEGORY_SUCCESS',
   CATEGORY_FAIL: 'CATEGORY_FAIL',
   LOAD_CATGORY_SNACK: 'LOAD_CATGORY_SNACK',
@@ -22,7 +22,7 @@ export default function categories(state = INITIAL_STATE, action) {
         ...state,
         loading: true,
       };
-    case Types.LOAD_CATEGORY_REQUEST:
+    case Types.LOAD_CATEGORY_REQUEST_ONLY_SNACK:
       return {
         ...state,
         loading_catgory: true,
@@ -59,22 +59,25 @@ export const CatActions = {
     type: Types.CATEGORY_REQUEST,
     payload: {},
   }),
-  categorySucess: (categories) => ({
+  categorySucess: (allcategories) => ({
     type: Types.CATEGORY_SUCCESS,
-    payload: categories,
+    payload: allcategories,
   }),
   categoryFail: () => ({
     type: Types.CATEGORY_SUCCESS,
     payload: {},
   }),
-  loadCategorySnack: (categories) => ({
+
+  loadCategorySnackSuccess: (categories) => ({
     type: Types.LOAD_CATGORY_SNACK,
     payload: { categories },
   }),
-  loadCategoryRequest: (categories) => ({
-    type: Types.LOAD_CATEGORY_REQUEST,
+
+  loadCategoryRequestOnlySnack: (categories) => ({
+    type: Types.LOAD_CATEGORY_REQUEST_ONLY_SNACK,
     payload: categories,
   }),
+
   setCurrent: (cat) => ({
     type: Types.SET_CURRENT,
     payload: cat,

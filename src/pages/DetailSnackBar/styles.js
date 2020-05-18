@@ -109,4 +109,61 @@ export const ImgContainer = styled.View`
 export const ListContainer = styled.View`
   flex: 0.68;
   margin: 0 15px;
+  justify-content: center;
+  align-items: center;
+`;
+
+//----PRODUCT LIST SNAP
+
+export const ProductContainer = styled.View`
+  height: 300px;
+  margin-top: 18px;
+  border-radius: 6px;
+  align-items: center;
+  background: ${colors.secondary};
+`;
+
+export const ContainerInfoProduct = styled.View`
+  padding: 0 2px;
+  align-items: center;
+`;
+export const Stars = styled.View`
+  background: ${colors.whiter};
+  width: 45px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: row;
+  top: 6px;
+  left: 10px;
+`;
+
+export const StarText = styled.Text`
+  font-size: 13px;
+  margin-right: 2px;
+  color: ${colors.secondary};
+  font-family: ${fonts.primary};
+`;
+
+export const Title = styled.Text`
+  font-size: 20px;
+  color: ${colors.whiter};
+  font-family: ${fonts.primary};
+`;
+
+export const Description = styled.Text`
+  font-size: 11px;
+  color: ${colors.whiter};
+  text-align: center;
+  margin-left: 2px;
+  font-family: ${fonts.secondary};
+`;
+
+export const ProductImg = styled.Image.attrs({
+  resizeMode: 'contain'
+})`
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
 `;

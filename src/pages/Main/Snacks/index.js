@@ -13,13 +13,15 @@ import {
 } from './styles';
 import { colors } from '~/styles';
 import { SnackBarActions } from '~/store/ducks/snackbar';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export default function SnackBar({ navigation, snack }) {
   const dispatch = useDispatch();
 
   async function detailSnackBar(id) {
-    navigation.navigate('DetailSnackBar');
+    navigation.navigate('DetailSnackBar', {
+      snack_id: id,
+    });
     dispatch(SnackBarActions.detailSnackRequest(id));
   }
 
@@ -37,7 +39,9 @@ export default function SnackBar({ navigation, snack }) {
           }}
           source={{ uri: snack.logoimg }}>
           <Avaliation>
-            <AvaliationText>{snack.geral_avaliation ? snack.geral_avaliation :'...'}</AvaliationText>
+            <AvaliationText>
+              {snack.geral_avaliation ? snack.geral_avaliation : '...'}
+            </AvaliationText>
             <Icon name="ios-star" size={12} color={colors.whiter} />
           </Avaliation>
         </Background>
