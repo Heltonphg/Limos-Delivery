@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { PacmanIndicator } from 'react-native-indicators';
+import ProductList from "./Products";
 import {
   BackButton,
   Background,
@@ -18,20 +19,13 @@ import {
   Options,
   SnackDetails,
   ListContainer,
-  ProductContainer,
-  Title,
-  ProductImg,
-  Description,
-  ContainerInfoProduct,
-  Stars,
-  StarText
+  Space,
 } from './styles';
 
 import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 import Carousel from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IonIcon from 'react-native-vector-icons/Ionicons';
-
 
 import { useDispatch, useSelector } from 'react-redux';
 import { colors } from '~/styles';
@@ -65,23 +59,6 @@ export default function DetailSnackBar({ navigation }) {
     dispatch(ProductActions.productRequest(snack_id, current.id));
   }
 
-  function renderItem({item, index}){
-    return (
-      <ProductContainer>
-        <ProductImg
-        source ={{uri: item.img}}
-        />
-        <Stars>
-          <StarText>{item.avaliation ? item.avaliation : '...'}</StarText>
-          <IonIcon style={{marginBottom: 3}} name="ios-star" size={12} color={colors.secondary} />
-        </Stars>
-        <ContainerInfoProduct>
-          <Title>{item.name}</Title>
-          <Description>{item.description}</Description>
-        </ContainerInfoProduct>
-      </ProductContainer>
-    );
-  }
 
   return (
     <Container>
@@ -149,7 +126,9 @@ export default function DetailSnackBar({ navigation }) {
           visible={!loading}>
           <Details>
             <InfoContainer>
-              <InfoTitle>Cidade</InfoTitle>
+              <Space>
+                <InfoTitle>Local</InfoTitle>
+              </Space>
               <Info>
                 {snackbar &&
                   snackbar.snack_address &&
@@ -157,12 +136,27 @@ export default function DetailSnackBar({ navigation }) {
               </Info>
             </InfoContainer>
             <InfoContainer>
-              <InfoTitle>Pagamento</InfoTitle>
-              <Info>{snackbar && snackbar.payment}</Info>
+              <Space>
+                <InfoTitle>Pagamentos</InfoTitle>
+                <IonIcon
+                  name="ios-arrow-down"
+                  size={13}
+                  color={colors.secondary}
+                />
+              </Space>
+              <IonIcon name="md-cash" size={21} color={colors.secondary} />
             </InfoContainer>
             <InfoContainer>
-              <InfoTitle>Mínimo</InfoTitle>
-              <Info>R$10</Info>
+              <Space>
+                <InfoTitle>Frete</InfoTitle>
+                <IonIcon
+                  name="ios-arrow-down"
+                  size={13}
+                  color={colors.secondary}
+                />
+              </Space>
+
+              <Icon name="motorcycle" size={21} color={colors.secondary} />
             </InfoContainer>
             <InfoContainer>
               <InfoTitle>Tempo</InfoTitle>
@@ -180,7 +174,9 @@ export default function DetailSnackBar({ navigation }) {
             layoutCardOffset={18}
             data={products}
             layout="default"
-            renderItem={renderItem}
+            renderItem={({ item }) => (
+              <ProductList item={item}  />
+            )}
             sliderWidth={390}
             itemWidth={220}
           />

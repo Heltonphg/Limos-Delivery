@@ -12,6 +12,7 @@ import { colors } from '~/styles';
 
 const App = () => (
   <Provider store={store}>
+
     <StatusBar barStyle="default" backgroundColor={colors.secondary} />
     <Routes />
   </Provider>

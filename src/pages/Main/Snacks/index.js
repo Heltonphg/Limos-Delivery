@@ -42,7 +42,7 @@ export default function SnackBar({ navigation, snack }) {
             <AvaliationText>
               {snack.geral_avaliation ? snack.geral_avaliation : '...'}
             </AvaliationText>
-            <Icon name="ios-star" size={12} color={colors.whiter} />
+            <Icon name="ios-star" size={12} color={colors.terciary} />
           </Avaliation>
         </Background>
         <Content>
