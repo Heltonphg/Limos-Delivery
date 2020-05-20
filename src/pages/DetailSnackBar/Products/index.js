@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import IonIcon from "react-native-vector-icons/Ionicons";
 import {colors} from "~/styles";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import { withNavigation } from 'react-navigation';
 
 import {
   BaseText,
@@ -20,11 +21,19 @@ import {
   Preco
 } from './styles';
 
-export default function ProductList({ item }) {
+function ProductList({ item, navigation }) {
+  const [sizes, setSizes] = useState([])
+  useEffect(()=>{
+    const s = item.product_sizes && item.product_sizes.map(e => e.preco)
+    setSizes(s)
+  },[])
+
   return (
-    <ProductContainer>
+    <ProductContainer onPress={()=>navigation.navigate('DetailProduct',{
+      product: item
+    })}>
       <ContainerImg>
-        <ProductImg resizeMode = {item.image ? 'stretch': 'contain'} source ={item.image ?{uri: item.img } : {uri: item.category.image_default_product}} />
+        <ProductImg resizeMode = {item.image ? 'stretch': 'contain'} source ={item.image ?{uri: item.img } : {uri: item.category && item.category.image_default_product}} />
         <Stars>
           <StarText>{item.avaliation ? item.avaliation : '...'}</StarText>
           <IonIcon
@@ -40,7 +49,7 @@ export default function ProductList({ item }) {
         <InfoTitleDescription>
           <Title>{item.name}</Title>
           <BaseText>descrição: </BaseText>
-          <Description numberOfLines={2}>{item.description ? item.description:  'Sem descrição'}</Description>
+          <Description numberOfLines={3}>{item.description ? item.description:  'Sem descrição'}</Description>
           <BaseText>Acompanhamento: </BaseText>
           <Acompanha>{item.acompanhamento ? item.acompanhamento : 'Sem acompanhamento'}</Acompanha>
         </InfoTitleDescription>
@@ -54,7 +63,7 @@ export default function ProductList({ item }) {
             />
 
           </ButtonProduct>
-          <Preco>R${item.preco}</Preco>
+          <Preco style = {item.product_sizes && item.product_sizes.length> 0 && {fontSize: 18}}>{item.product_sizes && item.product_sizes.length> 0 ? `a partir de R$${Math.min(...sizes)}`: `R$ ${item.preco}`}</Preco>
 
           <ButtonProduct>
             <Icon
@@ -69,3 +78,5 @@ export default function ProductList({ item }) {
     </ProductContainer>
   );
 }
+
+export default withNavigation(ProductList);

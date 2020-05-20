@@ -12,13 +12,15 @@ import Main from '~/pages/Main';
 import Login from '~/pages/Login';
 import ForgotPassword from '~/pages/ForgotPassword';
 import DetailSnackBar from '~/pages/DetailSnackBar';
+import DetailProduct from '~/pages/DetailProduct';
 
 import {colors} from "~/styles";
 
 const stackMain = createStackNavigator(
   {
     Main,
-    DetailSnackBar
+    DetailSnackBar,
+    DetailProduct
   },
   {
     initialRouteName: 'Main',
