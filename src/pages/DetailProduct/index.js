@@ -11,7 +11,9 @@ import {
   ContainerSelect,
   Quantity,
   ScrollItems,
-  Item
+  Item,
+  ContainerDetails,
+  ContainerText,
 } from './styles';
 import { colors } from '~/styles';
 
@@ -19,11 +21,11 @@ export default function DetailProduct({ navigation }) {
   const product = navigation.getParam('product', null);
   const [quantity, setQuantity] = useState(1);
 
-  useEffect(()=>{
-    if(quantity <=0){
+  useEffect(() => {
+    if (quantity <= 0) {
       setQuantity(1);
     }
-  },[quantity])
+  }, [quantity]);
 
   function handleAdd(type) {
     if (type === 'add') {
@@ -31,7 +33,6 @@ export default function DetailProduct({ navigation }) {
     } else {
       setQuantity(quantity - 1);
     }
-
   }
 
   return (
@@ -56,7 +57,10 @@ export default function DetailProduct({ navigation }) {
       </ContainerImg>
       <ContainerInfos>
         <First>
-          <Title>{product.name}</Title>
+          <ContainerText>
+            <Title>{product.name}</Title>
+          </ContainerText>
+
           <ContainerSelect>
             <Icons
               onPress={() => handleAdd('remove')}
@@ -73,11 +77,13 @@ export default function DetailProduct({ navigation }) {
             />
           </ContainerSelect>
         </First>
-        <ScrollItems>
-          <Item/>
-          <Item/>
-          <Item/>
-        </ScrollItems>
+        <ContainerDetails>
+          <ScrollItems>
+            <Item />
+            <Item />
+            <Item />
+          </ScrollItems>
+        </ContainerDetails>
       </ContainerInfos>
     </Container>
   );

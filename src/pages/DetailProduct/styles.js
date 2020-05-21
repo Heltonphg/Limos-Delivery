@@ -25,12 +25,11 @@ export const Imagem = styled.ImageBackground`
 export const BackButton = styled.TouchableOpacity.attrs({
   hitSlop: { top: 10, left: 10, right: 10, bottom: 10 },
 })`
-top: 12px;
-left: 7px;
+  top: 12px;
+  left: 7px;
 `;
 
-export const Icons = styled(Icon)`
-`;
+export const Icons = styled(Icon)``;
 
 export const ContainerInfos = styled.View`
   flex: 0.68;
@@ -51,33 +50,40 @@ export const ContainerSelect = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: ${fonts.primary};
-  font-size: 23px;
-  color: ${colors.secondary}
-`
+  font-family: ${fonts.secondary};
+  font-size: 21px;
+  text-align: left;
+  color: ${colors.secondary};
+`;
 
 export const Quantity = styled.Text`
   font-family: ${fonts.primary};
   font-size: 19px;
-  color: ${colors.terciary}
+  color: ${colors.terciary};
 `;
 
 export const ScrollItems = styled.ScrollView.attrs({
   horizontal: true,
   showsHorizontalScrollIndicator: false,
   contentContainerStyle: { paddingHorizontal: 10 },
-})`
-
-`;
+})``;
 
 export const Item = styled.View`
-   width: 70px;
-   border-radius: 5px;
-   margin:4px 2px 0 2px;
-   height: 65px;
-   justify-content: center;
-   align-items: center;
-   background: ${colors.whiter};
+  width: 70px;
+  border-radius: 5px;
+  margin: 4px 2px 0 2px;
+  height: 65px;
+  justify-content: center;
+  align-items: center;
+  background: ${colors.whiter};
 `;
 
+export const ContainerText = styled.View`
+  width: 60%;
+  justify-content: center;
+`;
 
+export const ContainerDetails = styled.View`
+  align-items: center;
+  justify-content: center;
+`;
