@@ -104,6 +104,13 @@ export const Info = styled.Text`
   color: ${colors.secondary};
 `;
 
+export const EmptyText = styled.Text`
+  font-size: 18px;
+  text-align: center;
+  font-family: ${fonts.primary};
+  color: ${colors.secondary};
+`;
+
 export const ImgContainer = styled.View`
   width: 100%;
   height: 100%;
@@ -117,6 +124,12 @@ export const ListContainer = styled.View`
 
 export const Space = styled.View`
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Empty = styled.View`
+  flex: 1;
   justify-content: center;
   align-items: center;
 `;

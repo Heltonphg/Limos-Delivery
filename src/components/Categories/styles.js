@@ -10,7 +10,7 @@ export const Container = styled.View`
 export const CategoryList = styled.FlatList.attrs({
   horizontal: true,
   showsHorizontalScrollIndicator: false,
-  contentContainerStyle: { paddingHorizontal: 9 },
+  contentContainerStyle: { paddingHorizontal: 10 },
 })``;
 
 export const TabItem = styled.View`
@@ -18,7 +18,7 @@ export const TabItem = styled.View`
   height: 39px;
   background: ${colors.whiter};
   border-radius: 6px;
-  margin-left: 6px;
+  margin:0 4px 0 3px;
   align-self: center;
   justify-content: center;
   align-items: center;

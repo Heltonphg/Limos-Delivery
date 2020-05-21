@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { PacmanIndicator } from 'react-native-indicators';
-import ProductList from "./Products";
+import ProductList from './Products';
 import {
   BackButton,
   Background,
@@ -20,6 +20,8 @@ import {
   SnackDetails,
   ListContainer,
   Space,
+  Empty,
+  EmptyText,
 } from './styles';
 
 import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
@@ -58,7 +60,6 @@ export default function DetailSnackBar({ navigation }) {
     }
     dispatch(ProductActions.productRequest(snack_id, current.id));
   }
-
 
   return (
     <Container>
@@ -169,17 +170,20 @@ export default function DetailSnackBar({ navigation }) {
       <ListContainer>
         {loadproducts ? (
           <PacmanIndicator color={colors.secondary} size={60} />
-        ) : (
+        ) : products.length > 0 ? (
           <Carousel
             layoutCardOffset={18}
             data={products}
             layout="default"
-            renderItem={({ item }) => (
-              <ProductList item={item}  />
-            )}
+            renderItem={({ item }) => <ProductList item={item} />}
             sliderWidth={390}
             itemWidth={220}
           />
+        ) : (
+          <Empty>
+            <Icon name="mood-bad" size={34} color={colors.secondary} />
+            <EmptyText>Nenhum produto</EmptyText>
+          </Empty>
         )}
       </ListContainer>
     </Container>

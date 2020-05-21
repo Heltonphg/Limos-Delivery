@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import { colors, fonts } from '../../styles';
-import Icon from 'react-native-vector-icons/Ionicons';
 import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
 export const Container = styled.View`
@@ -64,36 +63,4 @@ export const FlatSnacks = styled.FlatList.attrs({
   initialNumToRender: 10,
 })``;
 
-export const ContainerSearch = styled.View`
-  width: 100%;
-  height: 50px;
-  padding: 0 15px 0 15px;
-  justify-content: center;
-  align-items: center;
-`;
 
-export const Input = styled.TextInput.attrs({
-  placeholderTextColor: colors.secondary,
-})`
-  flex: 1;
-  height: 60px;
-  color: ${colors.secondary};
-`;
-
-export const InputIcon = styled(Icon).attrs({
-  size: 25,
-})`
-  color: ${colors.secondary};
-  margin-right: 5px;
-  margin-left: 5px;
-`;
-
-export const InputWrapper = styled.View`
-  height: 45px;
-  flex-direction: row;
-  background-color: ${colors.white};
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-`;
