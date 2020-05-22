@@ -50,7 +50,7 @@ function ProductList({ item, navigation }) {
           <Title>{item.name}</Title>
           <BaseText>descrição: </BaseText>
           <Description numberOfLines={3}>{item.description ? item.description:  'Sem descrição'}</Description>
-          <BaseText>Acompanhamento: </BaseText>
+          <BaseText>Acompanha: </BaseText>
           <Acompanha>{item.acompanhamento ? item.acompanhamento : 'Sem acompanhamento'}</Acompanha>
         </InfoTitleDescription>
         <ContainerSelect>
@@ -63,7 +63,8 @@ function ProductList({ item, navigation }) {
             />
 
           </ButtonProduct>
-          <Preco style = {item.product_sizes && item.product_sizes.length> 0 && {fontSize: 18}}>{item.product_sizes && item.product_sizes.length> 0 ? `a partir de R$${Math.min(...sizes)}`: `R$ ${item.preco}`}</Preco>
+          <Preco style = {item.product_sizes && item.product_sizes.length> 0 && {fontSize: 16}}>{item.product_sizes && item.product_sizes.length> 0 ? `a partir de R$${parseFloat(Math.min(...sizes)).toFixed(2)}`:
+            `R$ ${parseFloat(item.preco).toFixed(2)}`}</Preco>
 
           <ButtonProduct>
             <Icon

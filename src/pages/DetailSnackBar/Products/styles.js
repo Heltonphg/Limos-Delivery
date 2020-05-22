@@ -46,7 +46,7 @@ export const Title = styled.Text`
   font-family: ${fonts.primary};
 `;
 export const Preco = styled.Text`
-  font-size: 20px;
+  font-size: 18px;
   color: ${colors.whiter};
   font-family: ${fonts.primary};
 `;
