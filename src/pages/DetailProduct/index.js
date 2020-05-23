@@ -21,6 +21,7 @@ import {
   FlatSizes,
   ContainerSize,
   TextSelectSize,
+  Infos
 } from './styles';
 import { colors } from '~/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -29,7 +30,12 @@ export default function DetailProduct({ navigation }) {
   const product = navigation.getParam('product', null);
   //states
   const [quantity, setQuantity] = useState(1);
-  const [price, setPrice] = useState(product.product_sizes.length > 0 ? {preco: '...'} : {preco: product.preco});
+  const [price, setPrice] = useState(
+    product.product_sizes.length > 0
+      ? product.product_sizes[0]
+      : { preco: product.preco },
+  );
+  const [priceOfBuy, setPriceOfBuy] = useState(price.preco);
 
   useEffect(() => {
     if (quantity <= 0) {
@@ -37,8 +43,16 @@ export default function DetailProduct({ navigation }) {
     }
   }, [quantity]);
 
+  useEffect(() => {
+    setPriceOfBuy(price.preco * quantity);
+  }, [quantity, price]);
+
+  useEffect(() => {
+    setQuantity(1);
+  }, [price]);
+
   function handleSelectSize(size) {
-    setPrice(size)
+    setPrice(size);
   }
 
   function handleAdd(type) {
@@ -67,6 +81,12 @@ export default function DetailProduct({ navigation }) {
               color={!product.image ? colors.whiter : colors.secondary}
             />
           </BackButton>
+          <Icons
+            style={{ marginBottom: 3 }}
+            name="favorite-border"
+            size={25}
+            color={colors.white}
+          />
         </Imagem>
       </ContainerImg>
       <ContainerInfos>
@@ -94,9 +114,7 @@ export default function DetailProduct({ navigation }) {
         <ContainerDetails>
           <ScrollItems>
             <Item>
-              <BaseText>
-                R$ {price.preco !== '...' ? parseFloat(price.preco).toFixed(2): price.preco}
-              </BaseText>
+              <BaseText>R$ {parseFloat(priceOfBuy).toFixed(2)}</BaseText>
             </Item>
             <Item>
               <BaseText>
@@ -130,7 +148,14 @@ export default function DetailProduct({ navigation }) {
             data={product.product_sizes}
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => (
-              <ContainerSize style={item.id === price.id && {borderWidth: 2, borderColor: colors.secondary}} onPress={() => handleSelectSize(item)}>
+              <ContainerSize
+                style={
+                  item.id === price.id && {
+                    borderWidth: 2,
+                    borderColor: colors.secondary,
+                  }
+                }
+                onPress={() => handleSelectSize(item)}>
                 <TextSelectSize>{item.size}</TextSelectSize>
               </ContainerSize>
             )}

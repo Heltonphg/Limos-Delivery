@@ -26,14 +26,17 @@ export const ContainerImg = styled.View`
 export const Imagem = styled.ImageBackground`
   width: 100%;
   height: 100%;
+  padding: 12px 12px;
+  flex-direction: row;
+  justify-content: space-between;
   overflow: hidden;
 `;
 
 export const BackButton = styled.TouchableOpacity.attrs({
   hitSlop: { top: 10, left: 10, right: 10, bottom: 10 },
 })`
-  top: 12px;
-  left: 7px;
+ 
+  width: 8%;
 `;
 
 export const Icons = styled(Icon)``;
@@ -130,6 +133,11 @@ export const FlatSizes = styled.FlatList.attrs({
   showsHorizontalScrollIndicator: false,
   contentContainerStyle: { paddingHorizontal: 8 },
 })``;
+
+export const Infos = styled.View`
+  flex: 0.53;
+  background: red;
+`;
 
 
 

@@ -27,9 +27,9 @@ function* loadCategoryRequest(action) {
       }
     }
   }
-
   yield put(CatActions.loadCategorySnackSuccess(arrayCatsSnacks));
 }
+
 export function* CatSagas() {
   return yield all([
     takeLatest(Types.CATEGORY_REQUEST, CategoryRequest),
