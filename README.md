@@ -1,4 +1,4 @@
- <h2 align="center">Aplicativo Limos Delivery</h2>
+<h2 align="center">Aplicativo Limos Delivery</h2>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/heltonphg/Limos-Delivery">
@@ -27,5 +27,8 @@ O Limos delivery é um projeto que visa conectar lanchonets aos clientes da sua 
 <p align="center">
   <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/Screenshot_20200508-135422.png" width="160px">
 </p>
+
+####Depurar via reactotron *(https://github.com/infinitered/reactotron)*
+    adb reverse tcp:9090 tcp:9090
 
 

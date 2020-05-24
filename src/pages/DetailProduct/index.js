@@ -30,8 +30,11 @@ import {
 } from './styles';
 import { colors } from '~/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useDispatch} from "react-redux";
+import {bagActions} from "~/store/ducks/bag";
 
 export default function DetailProduct({ navigation }) {
+  const dispatch = useDispatch()
   const product = navigation.getParam('product', null);
   //states
   const [quantity, setQuantity] = useState(1);
@@ -66,6 +69,16 @@ export default function DetailProduct({ navigation }) {
     } else {
       setQuantity(quantity - 1);
     }
+  }
+
+  function handleAddToBag() {
+    const product_to_bag = {
+      product_id: product.id,
+      quantity,
+      preco: priceOfBuy,
+      size: product.product_sizes.length > 0 ? price.size: null
+    }
+    dispatch(bagActions.create_product_request(product_to_bag))
   }
 
   return (
@@ -183,7 +196,7 @@ export default function DetailProduct({ navigation }) {
         </Descri>
       </Infos>
       <Finaly>
-        <ButtonFinaly>
+        <ButtonFinaly onPress={()=> handleAddToBag()}>
           <TextButtonFinaly>Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)}</TextButtonFinaly>
         </ButtonFinaly>
       </Finaly>

@@ -60,7 +60,8 @@ export const ContainerSelect = styled.View`
 
 export const Title = styled.Text`
   font-family: ${fonts.secondary};
-  font-size: 21px;
+  font-size: 20px;
+  
   text-align: left;
   color: ${colors.secondary};
 `;
@@ -155,7 +156,7 @@ export const Finaly = styled.View`
   align-items: center;
 `;
 
-export const ButtonFinaly = styled.View`
+export const ButtonFinaly = styled.TouchableOpacity`
   width: 67%;
   height: 41px;
   background: ${colors.secondary};

@@ -4,6 +4,7 @@ import categories from './categories';
 import products from './products';
 import bag from './bag';
 
+
 const reducers = combineReducers({
   snackBar,
   categories,

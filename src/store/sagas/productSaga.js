@@ -1,5 +1,5 @@
-import { all, call, put, delay, takeLatest, select } from 'redux-saga/effects';
-import { ProductActions, ProductTypes, Types } from '../ducks/products';
+import { all, call, put, takeLatest, select } from 'redux-saga/effects';
+import { ProductActions, Types } from '../ducks/products';
 import api from '~/services/api';
 
 const token =
