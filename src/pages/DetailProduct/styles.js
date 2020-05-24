@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {colors, fonts, metrics} from '../../styles';
+import { colors, fonts, metrics } from '../../styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
@@ -35,7 +35,6 @@ export const Imagem = styled.ImageBackground`
 export const BackButton = styled.TouchableOpacity.attrs({
   hitSlop: { top: 10, left: 10, right: 10, bottom: 10 },
 })`
- 
   width: 8%;
 `;
 
@@ -100,7 +99,6 @@ export const ContainerSize = styled.TouchableOpacity`
   background: ${colors.whiter};
 `;
 
-
 export const ContainerText = styled.View`
   width: 60%;
   justify-content: center;
@@ -112,19 +110,32 @@ export const ContainerDetails = styled.View`
   justify-content: center;
 `;
 export const SelectSize = styled.View`
-  flex:0.1;
-  margin-top: 10px;
+  flex: 0.11;
 `;
 
-export const TextSelect = styled.Text`
+export const TextSub = styled.Text`
   font-family: ${fonts.primary};
-  font-size: 15px;
+  font-size: 17px;
+  margin-top: 7px;
   margin-left: ${metrics.base_padding}px;
   color: ${colors.secondary};
 `;
+
 export const TextSelectSize = styled.Text`
   font-family: ${fonts.primary};
   font-size: 15px;
+  color: ${colors.secondary};
+`;
+
+export const Descri = styled.Text`
+  font-family: ${fonts.secondary};
+  font-size: 15px;
+  text-align: left;
+  color: ${colors.secondary};
+`;
+export const TextSubDesc = styled.Text`
+  font-family: ${fonts.primary};
+  font-size: 17px;
   color: ${colors.secondary};
 `;
 
@@ -135,10 +146,27 @@ export const FlatSizes = styled.FlatList.attrs({
 })``;
 
 export const Infos = styled.View`
-  flex: 0.53;
-  background: red;
+padding: 0 15px;
 `;
 
+export const Finaly = styled.View`
+  flex: 0.12;
+  justify-content: center;
+  align-items: center;
+`;
 
+export const ButtonFinaly = styled.View`
+  width: 67%;
+  height: 41px;
+  background: ${colors.secondary};
+  justify-content: center;
+  align-items: center;
+  border-radius: ${metrics.base_raidus +1}px;
+`;
 
-//43
+export const TextButtonFinaly = styled.Text`
+  font-family: ${fonts.primary};
+  font-size: 17px;
+  color: ${colors.primary};
+`;
+

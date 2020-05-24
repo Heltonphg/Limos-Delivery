@@ -17,11 +17,16 @@ import {
   ContainerText,
   BaseText,
   SelectSize,
-  TextSelect,
+  TextSub,
   FlatSizes,
   ContainerSize,
   TextSelectSize,
-  Infos
+  Infos,
+  TextSubDesc,
+  Descri,
+  Finaly,
+  TextButtonFinaly,
+  ButtonFinaly,
 } from './styles';
 import { colors } from '~/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -78,7 +83,7 @@ export default function DetailProduct({ navigation }) {
             <Icons
               name="arrow-back"
               size={26}
-              color={!product.image ? colors.whiter : colors.secondary}
+              color={!product.image ? colors.whiter : colors.white}
             />
           </BackButton>
           <Icons
@@ -143,7 +148,7 @@ export default function DetailProduct({ navigation }) {
       </ContainerInfos>
       {product.product_sizes.length > 0 && (
         <SelectSize>
-          <TextSelect>Selecione o Tamanho:</TextSelect>
+          <TextSub>Selecione o Tamanho:</TextSub>
           <FlatSizes
             data={product.product_sizes}
             keyExtractor={(item) => String(item.id)}
@@ -162,6 +167,26 @@ export default function DetailProduct({ navigation }) {
           />
         </SelectSize>
       )}
+      <Infos
+        style={
+          product.product_sizes.length > 0
+            ? { flex: 0.3, paddingTop: 2 }
+            : { flex: 0.41 }
+        }>
+        <TextSubDesc>Descrição:</TextSubDesc>
+        <Descri>{product.description}</Descri>
+        <TextSubDesc style={{ marginTop: 3 }}>Acompanha:</TextSubDesc>
+        <Descri>
+          {product.acompanhamento
+            ? product.acompanhamento
+            : 'Sem acompanhamento'}
+        </Descri>
+      </Infos>
+      <Finaly>
+        <ButtonFinaly>
+          <TextButtonFinaly>Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)}</TextButtonFinaly>
+        </ButtonFinaly>
+      </Finaly>
     </Container>
   );
 }
