@@ -25,6 +25,7 @@ export const IconCart = styled(Entipo)`
   font-family: ${fonts.primary};
 `;
 
+
 export const CurrentLocation = styled.View`
   width: 50%;
   height: 35px;

@@ -42,6 +42,8 @@ function ProductList({ item, navigation }) {
         quantity: 1,
         preco: item.preco,
         size: null,
+        preco_original: item.preco,
+        snack_bar_id: item.snack_bar_id
       };
       dispatch(bagActions.create_product_request(product_to_bag));
     }

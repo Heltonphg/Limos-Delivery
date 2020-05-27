@@ -18,8 +18,8 @@ export const BaseText = styled.Text`
 export const ContainerImg = styled.View`
   flex: 0.32;
   background-color: ${colors.primary};
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
   overflow: hidden;
 `;
 

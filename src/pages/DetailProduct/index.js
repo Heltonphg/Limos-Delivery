@@ -30,13 +30,15 @@ import {
 } from './styles';
 import { colors } from '~/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {bagActions} from "~/store/ducks/bag";
 
 export default function DetailProduct({ navigation }) {
   const dispatch = useDispatch()
   const product = navigation.getParam('product', null);
+
   //states
+  const loading_create = useSelector(state => state.bag.loading_create)
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(
     product.product_sizes.length > 0
@@ -44,6 +46,7 @@ export default function DetailProduct({ navigation }) {
       : { preco: product.preco },
   );
   const [priceOfBuy, setPriceOfBuy] = useState(price.preco);
+
 
   useEffect(() => {
     if (quantity <= 0) {
@@ -76,7 +79,9 @@ export default function DetailProduct({ navigation }) {
       product_id: product.id,
       quantity,
       preco: priceOfBuy,
-      size: product.product_sizes.length > 0 ? price.size: null
+      size: product.product_sizes.length > 0 ? price.size : null,
+      preco_original: product.product_sizes.length > 0 ? price.preco : product.preco,
+      snack_bar_id: product.snack_bar_id
     }
     dispatch(bagActions.create_product_request(product_to_bag))
   }
@@ -197,7 +202,7 @@ export default function DetailProduct({ navigation }) {
       </Infos>
       <Finaly>
         <ButtonFinaly onPress={()=> handleAddToBag()}>
-          <TextButtonFinaly>Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)}</TextButtonFinaly>
+          <TextButtonFinaly>Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)} {JSON.stringify(loading_create)}</TextButtonFinaly>
         </ButtonFinaly>
       </Finaly>
     </Container>

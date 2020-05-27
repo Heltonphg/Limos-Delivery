@@ -1,24 +1,40 @@
 import React from 'react';
+import { withNavigation } from 'react-navigation';
 import {
   IconSide,
   Container,
   CurrentLocation,
   CurrentText,
   IconCart,
+  BagButton,
 } from './styles';
 import { View, Text, StyleSheet } from 'react-native';
 import { colors, fonts } from '~/styles';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { SnackBarActions } from '~/store/ducks/snackbar';
 
-export default function HeaderMain() {
+function HeaderMain({ navigation }) {
+  const dispatch = useDispatch();
   const itemsBag = useSelector((state) => state.bag.products);
   return (
     <Container>
-      <IconSide name="refresh" size={22} color="#f5f5f5" />
+      <IconSide
+        onPress={() => dispatch(SnackBarActions.snackbarsRequest())}
+        name="refresh"
+        size={22}
+        color="#f5f5f5"
+      />
       <CurrentLocation>
         <CurrentText>Antônio Martins</CurrentText>
       </CurrentLocation>
-      <IconCart name="shopping-bag" />
+      <IconCart
+        onPress={() =>
+          navigation.navigate('Bag', {
+            products: itemsBag,
+          })
+        }
+        name="shopping-bag"
+      />
       {itemsBag.length > 0 && (
         <View style={styles.bad}>
           <Text
@@ -34,6 +50,8 @@ export default function HeaderMain() {
     </Container>
   );
 }
+
+export default withNavigation(HeaderMain);
 
 const styles = StyleSheet.create({
   bad: {

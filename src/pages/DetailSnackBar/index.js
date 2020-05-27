@@ -42,23 +42,25 @@ export default function DetailSnackBar({ navigation }) {
 
   const snackbar = useSelector((state) => state.snackBar.snack);
   const loading = useSelector((state) => state.snackBar.loadingDetail);
-  let current = useSelector((state) => state.categories.current);
+  let currentCategory = useSelector((state) => state.categories.current);
   const products = useSelector((state) => state.products.products);
   const loadproducts = useSelector((state) => state.products.loading);
 
   useEffect(() => {
-    handleProducts();
-  }, [current]);
+    if (currentCategory !== null) {
+      handleProducts();
+    }
+  }, [currentCategory]);
 
   useEffect(() => {
     handleProducts();
   }, []);
 
   function handleProducts() {
-    if (!current) {
-      current = { id: '' };
+    if (!currentCategory) {
+      currentCategory = { id: '' };
     }
-    dispatch(ProductActions.productRequest(snack_id, current.id));
+    dispatch(ProductActions.productRequest(snack_id, currentCategory.id));
   }
 
   return (
