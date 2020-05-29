@@ -9,7 +9,6 @@ export const Types = {
 
 const INITIAL_STATE = {
   products: [],
-  error_create: null,
   loading: false,
   loading_create: false,
 };
@@ -24,13 +23,11 @@ export default function bag(state = INITIAL_STATE, action) {
     case Types.CREATE_PRODUCT_SUCCESS:
       return {
         ...state,
-        products: action.payload.product_bag,
         loading_create: false,
       };
     case Types.CREATE_PRODUCT_FAIL:
       return {
         ...state,
-        error_create: action.payload.error,
         loading_create: false,
       };
     case Types.LOAD_BAG_REQUEST:
@@ -44,19 +41,24 @@ export default function bag(state = INITIAL_STATE, action) {
         products: action.payload.products,
         loading: false,
       };
+    case Types.LOAD_BAG_FAIL:
+      return {
+        ...state,
+        loading: false,
+      };
     default:
       return state;
   }
 }
 
 export const bagActions = {
-  create_product_success: (product_bag) => ({
+  create_product_success: () => ({
     type: Types.CREATE_PRODUCT_SUCCESS,
-    payload: { product_bag },
+    payload: { },
   }),
-  create_product_fail: (error) => ({
+  create_product_fail: () => ({
     type: Types.CREATE_PRODUCT_FAIL,
-    payload: { error },
+    payload: {},
   }),
   create_product_request: (product) => ({
     type: Types.CREATE_PRODUCT_REQUEST,
@@ -70,8 +72,8 @@ export const bagActions = {
     type: Types.LOAD_BAG_SUCCES,
     payload: { products },
   }),
-  load_bag_fail: (error) => ({
+  load_bag_fail: () => ({
     type: Types.LOAD_BAG_FAIL,
-    payload: { error },
+    payload: {},
   }),
 };

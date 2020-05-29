@@ -30,23 +30,25 @@ import {
 } from './styles';
 import { colors } from '~/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useDispatch, useSelector} from "react-redux";
-import {bagActions} from "~/store/ducks/bag";
+import { useDispatch, useSelector } from 'react-redux';
+import { bagActions } from '~/store/ducks/bag';
+import { BallIndicator } from 'react-native-indicators';
 
 export default function DetailProduct({ navigation }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const product = navigation.getParam('product', null);
 
   //states
-  const loading_create = useSelector(state => state.bag.loading_create)
+  const loading_create = useSelector((state) => state.bag.loading_create);
+
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(
     product.product_sizes.length > 0
       ? product.product_sizes[0]
       : { preco: product.preco },
   );
-  const [priceOfBuy, setPriceOfBuy] = useState(price.preco);
 
+  const [priceOfBuy, setPriceOfBuy] = useState(price.preco);
 
   useEffect(() => {
     if (quantity <= 0) {
@@ -80,10 +82,11 @@ export default function DetailProduct({ navigation }) {
       quantity,
       preco: priceOfBuy,
       size: product.product_sizes.length > 0 ? price.size : null,
-      preco_original: product.product_sizes.length > 0 ? price.preco : product.preco,
-      snack_bar_id: product.snack_bar_id
-    }
-    dispatch(bagActions.create_product_request(product_to_bag))
+      preco_original:
+        product.product_sizes.length > 0 ? price.preco : product.preco,
+      snack_bar_id: product.snack_bar_id,
+    };
+    dispatch(bagActions.create_product_request(product_to_bag));
   }
 
   return (
@@ -201,8 +204,14 @@ export default function DetailProduct({ navigation }) {
         </Descri>
       </Infos>
       <Finaly>
-        <ButtonFinaly onPress={()=> handleAddToBag()}>
-          <TextButtonFinaly>Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)} {JSON.stringify(loading_create)}</TextButtonFinaly>
+        <ButtonFinaly onPress={() => handleAddToBag()}>
+          {loading_create ? (
+            <BallIndicator size={23} color={colors.whiter} />
+          ) : (
+            <TextButtonFinaly>
+              Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)}
+            </TextButtonFinaly>
+          )}
         </ButtonFinaly>
       </Finaly>
     </Container>
