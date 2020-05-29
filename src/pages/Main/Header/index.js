@@ -6,12 +6,12 @@ import {
   CurrentLocation,
   CurrentText,
   IconCart,
-  BagButton,
 } from './styles';
 import { View, Text, StyleSheet } from 'react-native';
 import { colors, fonts } from '~/styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { SnackBarActions } from '~/store/ducks/snackbar';
+import {TouchableOpacity} from "react-native";
 
 function HeaderMain({ navigation }) {
   const dispatch = useDispatch();
@@ -27,26 +27,28 @@ function HeaderMain({ navigation }) {
       <CurrentLocation>
         <CurrentText>Antônio Martins</CurrentText>
       </CurrentLocation>
-      <IconCart
-        onPress={() =>
-          navigation.navigate('Bag', {
-            products: itemsBag,
-          })
-        }
-        name="shopping-bag"
-      />
-      {itemsBag.length > 0 && (
-        <View style={styles.bad}>
-          <Text
-            style={{
-              color: 'white',
-              fontSize: 10,
-              fontFamily: fonts.primary,
-            }}>
-            {itemsBag.length}
-          </Text>
-        </View>
-      )}
+      <TouchableOpacity onPress={() =>
+        navigation.navigate('Bag', {
+          products: itemsBag,
+        })
+      } style={{width: 30, height:41,justifyContent:'center', alignItems:'center', backgroundColor: 'transparent'}}>
+        <IconCart
+          name="shopping-bag"
+        />
+        {itemsBag.length > 0 && (
+          <View style={styles.bad}>
+            <Text
+              style={{
+                color: 'white',
+                fontSize: 10,
+                fontFamily: fonts.primary,
+              }}>
+              {itemsBag.length}
+            </Text>
+          </View>
+        )}
+      </TouchableOpacity>
+
     </Container>
   );
 }
@@ -56,8 +58,9 @@ export default withNavigation(HeaderMain);
 const styles = StyleSheet.create({
   bad: {
     position: 'absolute',
-    right: 4,
-    top: 11,
+    right: 0,
+    top: 0,
+    left:22,
     backgroundColor: colors.terciary,
     borderRadius: 6,
     width: 12,

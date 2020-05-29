@@ -8,7 +8,7 @@ export const Container = styled.View`
   height: 20px;
   margin-bottom: -6px;
   align-items: center;
-  padding: 30px 12px;
+  padding: 30px 10px;
   margin-top: 3px;
   flex-direction: row;
   justify-content: space-between;
@@ -22,13 +22,12 @@ export const IconSide = styled(Icon)`
 export const IconCart = styled(Entipo)`
   font-size: 24px;
   color: ${colors.secondary};
-  font-family: ${fonts.primary};
 `;
-
 
 export const CurrentLocation = styled.View`
   width: 50%;
   height: 35px;
+  margin-left: 5px;
   border-radius: 15px;
   background-color: ${colors.whiter};
   justify-content: center;

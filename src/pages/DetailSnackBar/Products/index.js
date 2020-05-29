@@ -27,7 +27,7 @@ function ProductList({ item, navigation }) {
   const dispatch = useDispatch();
   const [sizes, setSizes] = useState([]);
   useEffect(() => {
-    const s = item.product_sizes && item.product_sizes.map((e) => e.preco);
+    const s = item.product_sizes && item.product_sizes.map((e) => e.price);
     setSizes(s);
   }, []);
 
@@ -40,9 +40,9 @@ function ProductList({ item, navigation }) {
       const product_to_bag = {
         product_id: item.id,
         quantity: 1,
-        preco: item.preco,
+        price: item.price,
         size: null,
-        preco_original: item.preco,
+        preco_original: item.price,
         snack_bar_id: item.snack_bar_id
       };
       dispatch(bagActions.create_product_request(product_to_bag));
@@ -104,7 +104,7 @@ function ProductList({ item, navigation }) {
             }>
             {item.product_sizes && item.product_sizes.length > 0
               ? `a partir de R$${parseFloat(Math.min(...sizes)).toFixed(2)}`
-              : `R$ ${parseFloat(item.preco).toFixed(2)}`}
+              : `R$ ${parseFloat(item.price).toFixed(2)}`}
           </Preco>
 
           <ButtonProduct onPress={() => handleAddToBag()}>

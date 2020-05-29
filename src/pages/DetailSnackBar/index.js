@@ -47,9 +47,7 @@ export default function DetailSnackBar({ navigation }) {
   const loadproducts = useSelector((state) => state.products.loading);
 
   useEffect(() => {
-    if (currentCategory !== null) {
       handleProducts();
-    }
   }, [currentCategory]);
 
   useEffect(() => {

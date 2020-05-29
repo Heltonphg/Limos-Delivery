@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import { colors, fonts, metrics } from '../../styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
 export const Container = styled.View`
   flex: 1;

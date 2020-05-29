@@ -1,17 +1,11 @@
 import React from 'react';
-import {Text,View} from 'react-native';
+import { Container } from './styles';
 
-export default function Bag({navigation}) {
+export default function Bag({ navigation }) {
   const products = navigation.getParam('products', []);
-  return(
-    <View style={{flex:1}}>
-      {
-        products && products.map(item =>{
-          return (
-            <Text key={item.id}>{item.id}</Text>
-          )
-        })
-      }
-    </View>
-  )
+
+  return (
+    <Container>
+    </Container>
+  );
 }

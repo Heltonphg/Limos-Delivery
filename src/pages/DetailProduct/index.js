@@ -45,10 +45,10 @@ export default function DetailProduct({ navigation }) {
   const [price, setPrice] = useState(
     product.product_sizes.length > 0
       ? product.product_sizes[0]
-      : { preco: product.preco },
+      : { price: product.price },
   );
 
-  const [priceOfBuy, setPriceOfBuy] = useState(price.preco);
+  const [priceOfBuy, setPriceOfBuy] = useState(price.price);
 
   useEffect(() => {
     if (quantity <= 0) {
@@ -57,7 +57,7 @@ export default function DetailProduct({ navigation }) {
   }, [quantity]);
 
   useEffect(() => {
-    setPriceOfBuy(price.preco * quantity);
+    setPriceOfBuy(price.price * quantity);
   }, [quantity, price]);
 
   useEffect(() => {
@@ -80,10 +80,10 @@ export default function DetailProduct({ navigation }) {
     const product_to_bag = {
       product_id: product.id,
       quantity,
-      preco: priceOfBuy,
+      price: priceOfBuy,
       size: product.product_sizes.length > 0 ? price.size : null,
       preco_original:
-        product.product_sizes.length > 0 ? price.preco : product.preco,
+        product.product_sizes.length > 0 ? price.price : product.price,
       snack_bar_id: product.snack_bar_id,
     };
     dispatch(bagActions.create_product_request(product_to_bag));
