@@ -22,6 +22,7 @@ import {
 } from './styles';
 import { bagActions } from '~/store/ducks/bag';
 import { useDispatch } from 'react-redux';
+import {AppActions} from "~/store/ducks/app";
 
 function ProductList({ item, navigation }) {
   const dispatch = useDispatch();

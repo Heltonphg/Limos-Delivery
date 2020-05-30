@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { colors, fonts } from '../../styles';
+import { colors, fonts } from '../../../styles';
 
 export const Container = styled.View`
   flex: 1;

@@ -47,7 +47,7 @@ export default function DetailSnackBar({ navigation }) {
   const loadproducts = useSelector((state) => state.products.loading);
 
   useEffect(() => {
-      handleProducts();
+    handleProducts();
   }, [currentCategory]);
 
   useEffect(() => {
@@ -98,6 +98,7 @@ export default function DetailSnackBar({ navigation }) {
             </ImgContainer>
             <ContentLogo>
               <Cover source={{ uri: snackbar && snackbar.logoimg }} />
+              <Info style={{marginTop:2}}>Fechado</Info>
             </ContentLogo>
           </SnackDetails>
         </ShimmerPlaceHolder>

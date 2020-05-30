@@ -2,9 +2,13 @@ export const Types = {
   CREATE_PRODUCT_REQUEST: 'CREATE_PRODUCT_REQUEST',
   CREATE_PRODUCT_SUCCESS: 'CREATE_PRODUCT_SUCCESS',
   CREATE_PRODUCT_FAIL: 'CREATE_PRODUCT_FAIL',
+
   LOAD_BAG_REQUEST: 'LOAD_BAG_REQUEST',
   LOAD_BAG_SUCCES: 'LOAD_BAG_SUCCES',
   LOAD_BAG_FAIL: 'LOAD_BAG_FAIL',
+
+  UPDATE_PODUCT_REQUEST: 'UPDATE_PODUCT_REQUEST',
+  UPDATE_PODUCT_SUCCESS: 'UPDATE_PODUCT_SUCCESS',
 };
 
 const INITIAL_STATE = {
@@ -76,4 +80,8 @@ export const bagActions = {
     type: Types.LOAD_BAG_FAIL,
     payload: {},
   }),
+  update_product_request:(id,quantity, price_original, price_atual, add)=>({
+    type: Types.UPDATE_PODUCT_REQUEST,
+    payload: {id,quantity, price_original, price_atual,add}
+  })
 };

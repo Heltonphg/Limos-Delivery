@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import store from './store';
 import createNavigator from '~/routes';
 import { colors } from '~/styles';
-import Modal from '~/components/Modals';
+import Modal from '~/components/Modals/ModalAvisos';
+import ModalLoad from '~/components/Modals/ModalLoad';
 import FlashMessage from "react-native-flash-message";
 
 const Routes = createNavigator(false);
@@ -15,6 +16,7 @@ const App = () => (
     <StatusBar barStyle="default" backgroundColor={colors.secondary} />
     <Routes />
     <Modal />
+    <ModalLoad />
     <FlashMessage position="top" />
   </Provider>
 );

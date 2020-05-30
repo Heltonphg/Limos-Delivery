@@ -12,6 +12,7 @@ import { colors, fonts } from '~/styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { SnackBarActions } from '~/store/ducks/snackbar';
 import {TouchableOpacity} from "react-native";
+import {AppActions} from "~/store/ducks/app";
 
 function HeaderMain({ navigation }) {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function HeaderMain({ navigation }) {
   return (
     <Container>
       <IconSide
-        onPress={() => dispatch(SnackBarActions.snackbarsRequest())}
+        onPress={() => dispatch(AppActions.load_all())}
         name="refresh"
         size={22}
         color="#f5f5f5"

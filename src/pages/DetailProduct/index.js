@@ -205,13 +205,9 @@ export default function DetailProduct({ navigation }) {
       </Infos>
       <Finaly>
         <ButtonFinaly onPress={() => handleAddToBag()}>
-          {loading_create ? (
-            <BallIndicator size={23} color={colors.whiter} />
-          ) : (
             <TextButtonFinaly>
               Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)}
             </TextButtonFinaly>
-          )}
         </ButtonFinaly>
       </Finaly>
     </Container>
