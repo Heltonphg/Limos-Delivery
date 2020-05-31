@@ -12,10 +12,11 @@ export const Header = styled.View`
   height: 180px;
 `;
 
-export const InfoContainer = styled.View`
+export const InfoContainer = styled.TouchableOpacity`
   margin: 0 3px;
   padding: 0 4px;
   height: 35px;
+  max-width: 120px;
   justify-content: center;
   align-items: center;
   background: ${colors.whiter};
@@ -62,6 +63,12 @@ export const Details = styled.View`
   margin-top: 15px;
 `;
 
+export const ScrollDetails = styled.ScrollView.attrs({
+  horizontal: true,
+  showsHorizontalScrollIndicator: false,
+  contentContainerStyle: { paddingHorizontal: 10 },
+})``;
+
 export const SnackDetails = styled.View``;
 
 export const Background = styled.ImageBackground.attrs({
@@ -98,7 +105,7 @@ export const InfoTitle = styled.Text`
 `;
 
 export const Info = styled.Text`
-  font-size: 12px;
+  font-size: 11px;
   text-align: center;
   font-family: ${fonts.terciary};
   color: ${colors.secondary};

@@ -1,6 +1,5 @@
-import styled from "styled-components/native/dist/styled-components.native.esm";
-import {colors, fonts} from "~/styles";
-
+import styled from 'styled-components/native';
+import { colors, fonts } from '~/styles';
 
 export const ProductContainer = styled.TouchableOpacity.attrs({
   activeOpacity: 0.9,
@@ -104,4 +103,3 @@ export const BaseText = styled.Text`
   font-size: 15px;
   font-family: ${fonts.primary};
 `;
-

@@ -7,7 +7,8 @@ import createNavigator from '~/routes';
 import { colors } from '~/styles';
 import Modal from '~/components/Modals/ModalAvisos';
 import ModalLoad from '~/components/Modals/ModalLoad';
-import FlashMessage from "react-native-flash-message";
+import ModalInfos from '~/components/Modals/ModalInfos';
+import FlashMessage from 'react-native-flash-message';
 
 const Routes = createNavigator(false);
 
@@ -17,6 +18,7 @@ const App = () => (
     <Routes />
     <Modal />
     <ModalLoad />
+    <ModalInfos />
     <FlashMessage position="top" />
   </Provider>
 );

@@ -22,7 +22,6 @@ import {
 } from './styles';
 import { bagActions } from '~/store/ducks/bag';
 import { useDispatch } from 'react-redux';
-import {AppActions} from "~/store/ducks/app";
 
 function ProductList({ item, navigation }) {
   const dispatch = useDispatch();
@@ -36,7 +35,7 @@ function ProductList({ item, navigation }) {
     if (item.product_sizes.length > 0) {
       navigation.navigate('DetailProduct', {
         product: item,
-      })
+      });
     } else {
       const product_to_bag = {
         product_id: item.id,
@@ -44,7 +43,7 @@ function ProductList({ item, navigation }) {
         price: item.price,
         size: null,
         preco_original: item.price,
-        snack_bar_id: item.snack_bar_id
+        snack_bar_id: item.snack_bar_id,
       };
       dispatch(bagActions.create_product_request(product_to_bag));
     }

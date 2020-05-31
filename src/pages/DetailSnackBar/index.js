@@ -22,6 +22,7 @@ import {
   Space,
   Empty,
   EmptyText,
+  ScrollDetails,
 } from './styles';
 
 import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
@@ -34,6 +35,7 @@ import { colors } from '~/styles';
 
 import Categories from '~/components/Categories';
 import { ProductActions } from '~/store/ducks/products';
+import { AppActions } from '~/store/ducks/app';
 
 export default function DetailSnackBar({ navigation }) {
   const snack_id = navigation.getParam('snack_id', '');
@@ -98,7 +100,14 @@ export default function DetailSnackBar({ navigation }) {
             </ImgContainer>
             <ContentLogo>
               <Cover source={{ uri: snackbar && snackbar.logoimg }} />
-              <Info style={{marginTop:2}}>Fechado</Info>
+              <Info
+                style={
+                  snackbar.is_open && snackbar.is_open
+                    ? { color: colors.alertSucess }
+                    : { color: colors.alertError }
+                }>
+                {snackbar.is_open && snackbar.is_open ? 'Aberto' : 'Fechado'}
+              </Info>
             </ContentLogo>
           </SnackDetails>
         </ShimmerPlaceHolder>
@@ -126,45 +135,66 @@ export default function DetailSnackBar({ navigation }) {
           }}
           autoRun={true}
           visible={!loading}>
-          <Details>
-            <InfoContainer>
-              <Space>
-                <InfoTitle>Local</InfoTitle>
-              </Space>
-              <Info>
-                {snackbar &&
-                  snackbar.snack_address &&
-                  snackbar.snack_address.city}
-              </Info>
-            </InfoContainer>
-            <InfoContainer>
-              <Space>
-                <InfoTitle>Pagamentos</InfoTitle>
-                <IonIcon
-                  name="ios-arrow-down"
-                  size={13}
-                  color={colors.secondary}
-                />
-              </Space>
-              <IonIcon name="md-cash" size={21} color={colors.secondary} />
-            </InfoContainer>
-            <InfoContainer>
-              <Space>
-                <InfoTitle>Frete</InfoTitle>
-                <IonIcon
-                  name="ios-arrow-down"
-                  size={13}
-                  color={colors.secondary}
-                />
-              </Space>
+          <ScrollDetails>
+            <Details>
+              <InfoContainer>
+                <Space>
+                  <InfoTitle>Local</InfoTitle>
+                </Space>
+                <Info>
+                  {snackbar &&
+                    snackbar.snack_address &&
+                    snackbar.snack_address.city}
+                </Info>
+              </InfoContainer>
+              <InfoContainer
+                onPress={() => {
+                  const payments = snackbar.payment.split(',');
+                  dispatch(
+                    AppActions.openModalInfo(
+                      'Formas de Pagamento',
+                      [...payments],
+                      [],
+                      [],
+                    ),
+                  );
+                }}>
+                <Space>
+                  <InfoTitle>Pagamentos</InfoTitle>
+                  <IonIcon
+                    name="ios-arrow-down"
+                    size={13}
+                    color={colors.secondary}
+                  />
+                </Space>
+                <IonIcon name="md-cash" size={21} color={colors.secondary} />
+              </InfoContainer>
+              <InfoContainer>
+                <Space>
+                  <InfoTitle>Frete Entrega</InfoTitle>
+                  <IonIcon
+                    name="ios-arrow-down"
+                    size={13}
+                    color={colors.secondary}
+                  />
+                </Space>
 
-              <Icon name="motorcycle" size={21} color={colors.secondary} />
-            </InfoContainer>
-            <InfoContainer>
-              <InfoTitle>Tempo</InfoTitle>
-              <Info>{snackbar && snackbar.min_max_time_delivery}</Info>
-            </InfoContainer>
-          </Details>
+                <Icon name="motorcycle" size={21} color={colors.secondary} />
+              </InfoContainer>
+              <InfoContainer>
+                <InfoTitle>Valor Mínimo</InfoTitle>
+                <Info>R$ 6.00</Info>
+              </InfoContainer>
+              <InfoContainer>
+                <InfoTitle>Tempo Médio</InfoTitle>
+                <Info>
+                  {snackbar && snackbar.min_max_time_delivery
+                    ? snackbar.min_max_time_delivery
+                    : '...'}
+                </Info>
+              </InfoContainer>
+            </Details>
+          </ScrollDetails>
         </ShimmerPlaceHolder>
         <Categories />
       </BodyHeader>

@@ -38,7 +38,13 @@ export default function Bag({ navigation }) {
   return (
     <Container>
       <Header title={'Sacola'} buttonBack={true} />
-      <Body style={!products.length > 0 && {justifyContent: 'center', alignItems: 'center'}}>
+      <Body
+        style={
+          !products.length > 0 && {
+            justifyContent: 'center',
+            alignItems: 'center',
+          }
+        }>
         {products.length > 0 ? (
           <FlatProducts
             data={products}
