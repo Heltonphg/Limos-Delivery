@@ -102,11 +102,11 @@ export default function DetailSnackBar({ navigation }) {
               <Cover source={{ uri: snackbar && snackbar.logoimg }} />
               <Info
                 style={
-                  snackbar.is_open && snackbar.is_open
+                  snackbar && snackbar.is_open
                     ? { color: colors.alertSucess }
                     : { color: colors.alertError }
                 }>
-                {snackbar.is_open && snackbar.is_open ? 'Aberto' : 'Fechado'}
+                {snackbar && snackbar.is_open ? 'Aberto' : 'Fechado'}
               </Info>
             </ContentLogo>
           </SnackDetails>

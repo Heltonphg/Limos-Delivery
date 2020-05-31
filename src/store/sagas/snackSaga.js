@@ -1,10 +1,10 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { SnackBarActions, Types } from '../ducks/snackbar';
 import api from '~/services/api';
-import {CatActions} from "~/store/ducks/categories";
+import { CatActions } from '~/store/ducks/categories';
 
 const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTU4OTcyMzQxMH0.L-dngxpYwG-Jyp1Jh50f_MVs1BKUBtbkSaFJZciJgq0';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTU5MDk0NzM5NX0.fK8MfsqMM00WwhyKeRzMOQA_Ic6F7IsajhD68zQ3MT0';
 
 function* loadSnacks() {
   try {
@@ -24,8 +24,6 @@ function* detailSnack(action) {
   yield put(SnackBarActions.detailSnackSuccess(data));
   yield put(CatActions.loadCategoryRequestOnlySnack(data.categories));
   yield put(CatActions.setCurrent(null));
-
-
 }
 
 export function* SnackSaga() {

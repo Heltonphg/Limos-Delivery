@@ -1,8 +1,8 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { Types } from '../ducks/app';
-import {SnackBarActions} from "~/store/ducks/snackbar";
-import {ProductActions} from "~/store/ducks/products";
-import {bagActions} from "~/store/ducks/bag";
+import { SnackBarActions } from '~/store/ducks/snackbar';
+import { ProductActions } from '~/store/ducks/products';
+import { bagActions } from '~/store/ducks/bag';
 
 function* load_all() {
   yield put(SnackBarActions.snackbarsRequest());
