@@ -33,14 +33,7 @@ export default function ModalInfos() {
               data={form_payment}
               keyExtractor={(form) => String(form)}
               renderItem={({ item: payment }) => (
-                <View style={styles.formpayment}>
-                  <Icon
-                    name={payment === 'Dinheiro' ? 'ios-cash' : 'ios-card'}
-                    size={26}
-                    color={colors.secondary}
-                  />
-                  <Text style={styles.textformpayment}>{payment}</Text>
-                </View>
+                <View style={styles.formpayment}></View>
               )}
             />
           )}

@@ -10,7 +10,7 @@ import {
   NoCategory,
   Shimmer,
   ShimmerLoad,
-  ContLoad
+  ContLoad,
 } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { colors } from '~/styles';
@@ -29,7 +29,7 @@ export default function Categories() {
   return (
     <Container>
       <Title>Categorias</Title>
-      {loading  &&(
+      {loading && (
         <ContLoad>
           <ShimmerLoad autoRun={true} visible={!loading}>
             <Shimmer />

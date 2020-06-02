@@ -149,14 +149,8 @@ export default function DetailSnackBar({ navigation }) {
               </InfoContainer>
               <InfoContainer
                 onPress={() => {
-                  const payments = snackbar.payment.split(',');
                   dispatch(
-                    AppActions.openModalInfo(
-                      'Formas de Pagamento',
-                      [...payments],
-                      [],
-                      [],
-                    ),
+                    AppActions.openModalInfo('Formas de Pagamento', [], [], []),
                   );
                 }}>
                 <Space>

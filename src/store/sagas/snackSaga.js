@@ -8,7 +8,7 @@ const token =
 
 function* loadSnacks() {
   try {
-    const { data } = yield call(api.get, '/snackbar', {
+    const { data } = yield call(api.get, '/snackbar_user', {
       headers: { Authorization: `Bearer ${token}` },
     });
     yield put(SnackBarActions.snackbarsSuccess(data));
@@ -18,7 +18,7 @@ function* loadSnacks() {
 }
 
 function* detailSnack(action) {
-  const { data } = yield call(api.get, `/snackbar/${action.payload.id}`, {
+  const { data } = yield call(api.get, `/snackbar_user/${action.payload.id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   yield put(SnackBarActions.detailSnackSuccess(data));
