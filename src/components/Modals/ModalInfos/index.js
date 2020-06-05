@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   Text,
   FlatList,
+  Image,
 } from 'react-native';
 import Material_Icon from 'react-native-vector-icons/MaterialIcons';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { useDispatch, useSelector } from 'react-redux';
 import { colors, fonts } from '~/styles';
 import { AppActions } from '~/store/ducks/app';
@@ -31,9 +31,21 @@ export default function ModalInfos() {
           {form_payment && (
             <FlatList
               data={form_payment}
-              keyExtractor={(form) => String(form)}
+              keyExtractor={(form) => String(form.id)}
               renderItem={({ item: payment }) => (
-                <View style={styles.formpayment}></View>
+                <View style={styles.formpayment}>
+                  <View style={styles.contentform}>
+                    <Image
+                      resizeMode="contain"
+                      style={{ width: 70, height: 45 }}
+                      source={{ uri: payment.Urlflag }}
+                    />
+                    <Text style={styles.paymentText}>
+                      {payment.name_flag ? payment.name_flag : ''}{' '}
+                      {payment.type}
+                    </Text>
+                  </View>
+                </View>
               )}
             />
           )}
@@ -51,10 +63,10 @@ export default function ModalInfos() {
 const styles = StyleSheet.create({
   conainerModal: {
     width: '100%',
-    height: '40%',
+    height: '55%',
     borderRadius: 6,
     paddingTop: 15,
-    paddingHorizontal: 15,
+    paddingHorizontal: 20,
     backgroundColor: colors.white,
   },
   body: {
@@ -93,5 +105,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: fonts.secondary,
     marginLeft: 5,
+  },
+  contentform: {
+    flexDirection: 'row',
+    marginLeft: -10,
+    marginTop: -1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  paymentText: {
+    fontSize: 16,
+    fontFamily: fonts.primary,
+    color: colors.secondary,
+    marginBottom: 2,
   },
 });

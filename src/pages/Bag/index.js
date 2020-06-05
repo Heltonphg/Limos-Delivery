@@ -66,9 +66,7 @@ export default function Bag({ navigation }) {
         )}
       </Body>
       <Footer>
-        <PaymentText>
-          {products.length} itens - R$ {parseFloat(price).toFixed(2)}
-        </PaymentText>
+        <PaymentText>Total: R$ {parseFloat(price).toFixed(2)}</PaymentText>
         <PaymentButton>
           <PaymentButtonText>Iniciar Pedido</PaymentButtonText>
         </PaymentButton>

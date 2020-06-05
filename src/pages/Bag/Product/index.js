@@ -25,7 +25,13 @@ export default function ({ product_bag }) {
   function handleUpdateProductBag(add) {
     const { id, quantity, preco_original, price } = product_bag;
     dispatch(
-      bagActions.update_product_request(id, quantity, preco_original, price,add),
+      bagActions.update_product_request(
+        id,
+        quantity,
+        preco_original,
+        price,
+        add,
+      ),
     );
   }
 
@@ -47,17 +53,15 @@ export default function ({ product_bag }) {
       <ProductInfo>
         <Firt>
           <ProductName>
-            {product_bag.quantity}x | {product.name}
+            {product.name}
             {product_bag.size && ` (${product_bag.size})`}
           </ProductName>
           <ProductDescription numberOfLines={2}>
             {product.description}
           </ProductDescription>
           <Price>
-            R$
-            {parseFloat(
-              product_bag.preco_original * product_bag.quantity,
-            ).toFixed(2)}
+            {product_bag.quantity}x | R$
+            {parseFloat(product_bag.preco_original).toFixed(2)}
           </Price>
         </Firt>
         <Second>
@@ -67,7 +71,9 @@ export default function ({ product_bag }) {
             <Icon name="md-add" size={20} color={colors.whiter} />
           </Button>
           <TextQuantity>{product_bag.quantity}</TextQuantity>
-          <Button onPress={()=>handleUpdateProductBag(false)} style={{ marginTop: 5 }}>
+          <Button
+            onPress={() => handleUpdateProductBag(false)}
+            style={{ marginTop: 5 }}>
             <Icon name="md-remove" size={20} color={colors.whiter} />
           </Button>
         </Second>

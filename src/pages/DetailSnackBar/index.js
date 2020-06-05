@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { PacmanIndicator } from 'react-native-indicators';
 import ProductList from './Products';
+import { Linking } from 'react-native';
 import {
   BackButton,
   Background,
@@ -61,6 +62,12 @@ export default function DetailSnackBar({ navigation }) {
       currentCategory = { id: '' };
     }
     dispatch(ProductActions.productRequest(snack_id, currentCategory.id));
+  }
+
+  function sendWhatsapp() {
+    Linking.openURL(
+      `whatsapp://send?phone=${snackbar.snack_address.phone}&text=Olá ${snackbar.name}`,
+    );
   }
 
   return (
@@ -147,10 +154,40 @@ export default function DetailSnackBar({ navigation }) {
                     snackbar.snack_address.city}
                 </Info>
               </InfoContainer>
+              <InfoContainer onPress={() => sendWhatsapp()}>
+                <Space>
+                  <InfoTitle>Contato</InfoTitle>
+                  <IonIcon
+                    name="ios-arrow-down"
+                    size={13}
+                    color={colors.secondary}
+                  />
+                </Space>
+                <Info>
+                  <Icon name="phone" size={21} color={colors.secondary} />
+                </Info>
+              </InfoContainer>
+              <InfoContainer>
+                <Space>
+                  <InfoTitle>Frete</InfoTitle>
+                  <IonIcon
+                    name="ios-arrow-down"
+                    size={13}
+                    color={colors.secondary}
+                  />
+                </Space>
+
+                <Icon name="motorcycle" size={21} color={colors.secondary} />
+              </InfoContainer>
               <InfoContainer
                 onPress={() => {
                   dispatch(
-                    AppActions.openModalInfo('Formas de Pagamento', [], [], []),
+                    AppActions.openModalInfo(
+                      'Formas de Pagamento',
+                      [...snackbar.payment_methods],
+                      [],
+                      [],
+                    ),
                   );
                 }}>
                 <Space>
@@ -163,29 +200,10 @@ export default function DetailSnackBar({ navigation }) {
                 </Space>
                 <IonIcon name="md-cash" size={21} color={colors.secondary} />
               </InfoContainer>
-              <InfoContainer>
-                <Space>
-                  <InfoTitle>Frete Entrega</InfoTitle>
-                  <IonIcon
-                    name="ios-arrow-down"
-                    size={13}
-                    color={colors.secondary}
-                  />
-                </Space>
 
-                <Icon name="motorcycle" size={21} color={colors.secondary} />
-              </InfoContainer>
               <InfoContainer>
                 <InfoTitle>Valor Mínimo</InfoTitle>
                 <Info>R$ 6.00</Info>
-              </InfoContainer>
-              <InfoContainer>
-                <InfoTitle>Tempo Médio</InfoTitle>
-                <Info>
-                  {snackbar && snackbar.min_max_time_delivery
-                    ? snackbar.min_max_time_delivery
-                    : '...'}
-                </Info>
               </InfoContainer>
             </Details>
           </ScrollDetails>

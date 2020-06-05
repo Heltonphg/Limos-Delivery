@@ -66,6 +66,7 @@ export const Details = styled.View`
 export const ScrollDetails = styled.ScrollView.attrs({
   horizontal: true,
   showsHorizontalScrollIndicator: false,
+  indicatorStyle: 'white',
   contentContainerStyle: { paddingHorizontal: 10 },
 })``;
 

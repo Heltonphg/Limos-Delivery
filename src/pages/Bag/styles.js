@@ -7,7 +7,6 @@ export const Container = styled.View`
 `;
 export const Body = styled.View`
   flex: 0.9;
-
   padding: 0 ${metrics.base_padding}px;
 `;
 
@@ -48,7 +47,5 @@ export const FlatProducts = styled.FlatList.attrs({
 })``;
 
 export const RefreshControl = styled.RefreshControl`
-    color: ${colors.secondary};
+  color: ${colors.secondary};
 `;
-
-

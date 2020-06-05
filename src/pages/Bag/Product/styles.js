@@ -1,15 +1,15 @@
 import styled from 'styled-components/native';
-import { colors, fonts, metrics } from '~/styles';
+import { colors, fonts } from '~/styles';
 
 export const Container = styled.View`
   margin: 8px 0 0 0;
-  height: 100px;
+  height: 105px;
   flex-direction: row;
   border-radius: 6px;
   background-color: ${colors.secondary};
 `;
 export const ImageContainer = styled.View`
-  flex: 0.41;
+  flex: 0.44;
   justify-content: center;
   align-items: center;
   border-radius: 6px;
@@ -76,8 +76,8 @@ export const ProductImg = styled.ImageBackground`
 `;
 
 export const Button = styled.TouchableOpacity`
-width: 30px;
-height: 30px;
-justify-content: center;
-align-items: center;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
 `;
