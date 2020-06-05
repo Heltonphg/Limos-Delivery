@@ -24,10 +24,10 @@ import {
 } from './styles';
 import logo from '~/assets/lo.png';
 import { colors } from '~/styles';
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
   return (
     <Container>
-      <ScrollView showsVerticalScrollIndicator ={false}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <LoginContainer>
           <Logo resizeMode={'contain'} source={logo} />
           <TextLogo>Limos Delivery</TextLogo>
@@ -62,11 +62,11 @@ export default function Login({navigation}) {
             </InputWrapper>
           </InputContainer>
 
-          <EsqueciSenha onPress ={()=> navigation.navigate('ForgotPassword')}>
+          <EsqueciSenha onPress={() => navigation.navigate('ForgotPassword')}>
             <EsqueciSenhaText>Esqueci minha senha</EsqueciSenhaText>
           </EsqueciSenha>
 
-          <ButtonEntrar onPress ={()=> navigation.navigate('Main')}>
+          <ButtonEntrar onPress={() => navigation.navigate('Main')}>
             <ButtonEntrarText>ENTRAR</ButtonEntrarText>
           </ButtonEntrar>
 

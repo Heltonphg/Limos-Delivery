@@ -73,7 +73,7 @@ export const SocialIcon = styled(Ionicons).attrs({
   size: 34,
 })`
   color: ${colors.secondary};
-  margin-right: 5px;
+  margin-right: 1px;
   margin-left: 5px;
 `;
 
@@ -82,6 +82,7 @@ export const Input = styled.TextInput.attrs({
 })`
   flex: 1;
   height: 60px;
+  font-family: ${fonts.primary};
   color: ${colors.secondary};
 `;
 export const EsqueciSenha = styled.TouchableOpacity`
@@ -90,7 +91,6 @@ export const EsqueciSenha = styled.TouchableOpacity`
   align-self: flex-end;
   font-size: 19px;
   margin-top: 13px;
-  margin-bottom: 30px;
 `;
 
 export const EsqueciSenhaText = styled.Text`
@@ -101,6 +101,7 @@ export const EsqueciSenhaText = styled.Text`
 
 export const ButtonEntrar = styled.TouchableOpacity`
   padding-left: 3px;
+  margin-top: 30px;
   width: 100%;
   height: 45px;
   background-color: transparent;
