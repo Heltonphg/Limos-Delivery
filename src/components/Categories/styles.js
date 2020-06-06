@@ -54,6 +54,7 @@ export const NoCategory = styled.Text`
   font-size: 15px;
   color: ${colors.darker};
   text-align: center;
+  margin-top: 10px;
   font-family: ${fonts.secondary};
 `;
 

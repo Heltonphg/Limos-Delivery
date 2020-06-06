@@ -60,7 +60,7 @@ export const ContainerSelect = styled.View`
 export const Title = styled.Text`
   font-family: ${fonts.secondary};
   font-size: 20px;
-  
+
   text-align: left;
   color: ${colors.secondary};
 `;
@@ -146,7 +146,8 @@ export const FlatSizes = styled.FlatList.attrs({
 })``;
 
 export const Infos = styled.View`
-padding: 0 15px;
+  padding: 0 15px;
+  
 `;
 
 export const Finaly = styled.View`
@@ -161,7 +162,7 @@ export const ButtonFinaly = styled.TouchableOpacity`
   background: ${colors.secondary};
   justify-content: center;
   align-items: center;
-  border-radius: ${metrics.base_raidus +1}px;
+  border-radius: ${metrics.base_raidus + 1}px;
 `;
 
 export const TextButtonFinaly = styled.Text`
@@ -169,4 +170,3 @@ export const TextButtonFinaly = styled.Text`
   font-size: 17px;
   color: ${colors.primary};
 `;
-

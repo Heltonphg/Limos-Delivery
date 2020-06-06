@@ -16,9 +16,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { colors } from '~/styles';
 import { CatActions } from '~/store/ducks/categories';
 
-export default function Categories() {
+export default function Categories({ categories }) {
   const loading = useSelector((state) => state.snackBar.loadingDetail);
-  const categories = useSelector((state) => state.categories.catgorieSnack);
   const current = useSelector((state) => state.categories.current);
   const dispatch = useDispatch();
 
@@ -46,7 +45,7 @@ export default function Categories() {
         </ContLoad>
       )}
 
-      {categories.length > 0 && !loading ? (
+      {categories && categories.length > 0 && !loading ? (
         <CategoryList
           keyboardShouldPersistTabs="handled"
           data={categories}
@@ -80,6 +79,7 @@ export default function Categories() {
           )}
         />
       ) : (
+        categories &&
         categories.length == 0 &&
         !loading && (
           <TabItemContainer>

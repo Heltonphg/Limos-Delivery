@@ -208,7 +208,7 @@ export default function DetailSnackBar({ navigation }) {
             </Details>
           </ScrollDetails>
         </ShimmerPlaceHolder>
-        <Categories />
+        <Categories categories={snackbar && snackbar.categories} />
       </BodyHeader>
       <ListContainer>
         {loadproducts ? (

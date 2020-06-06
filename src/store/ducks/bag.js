@@ -58,7 +58,7 @@ export default function bag(state = INITIAL_STATE, action) {
 export const bagActions = {
   create_product_success: () => ({
     type: Types.CREATE_PRODUCT_SUCCESS,
-    payload: { },
+    payload: {},
   }),
   create_product_fail: () => ({
     type: Types.CREATE_PRODUCT_FAIL,
@@ -80,8 +80,8 @@ export const bagActions = {
     type: Types.LOAD_BAG_FAIL,
     payload: {},
   }),
-  update_product_request:(id,quantity, price_original, price_atual, add)=>({
+  update_product_request: (id, quantity, price_original, price_atual, add) => ({
     type: Types.UPDATE_PODUCT_REQUEST,
-    payload: {id,quantity, price_original, price_atual,add}
-  })
+    payload: { id, quantity, price_original, price_atual, add },
+  }),
 };

@@ -18,7 +18,6 @@ import { bagActions } from '~/store/ducks/bag';
 export default function Bag({ navigation }) {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.bag.products, []);
-
   const loadingBag = useSelector((state) => state.bag.loading);
 
   function onLoadingBag() {

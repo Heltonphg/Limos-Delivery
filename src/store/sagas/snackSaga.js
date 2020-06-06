@@ -22,7 +22,6 @@ function* detailSnack(action) {
     headers: { Authorization: `Bearer ${token}` },
   });
   yield put(SnackBarActions.detailSnackSuccess(data));
-  yield put(CatActions.loadCategoryRequestOnlySnack(data.categories));
   yield put(CatActions.setCurrent(null));
 }
 

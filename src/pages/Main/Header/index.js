@@ -11,8 +11,8 @@ import { View, Text, StyleSheet } from 'react-native';
 import { colors, fonts } from '~/styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { SnackBarActions } from '~/store/ducks/snackbar';
-import {TouchableOpacity} from "react-native";
-import {AppActions} from "~/store/ducks/app";
+import { TouchableOpacity } from 'react-native';
+import { AppActions } from '~/store/ducks/app';
 
 function HeaderMain({ navigation }) {
   const dispatch = useDispatch();
@@ -28,14 +28,20 @@ function HeaderMain({ navigation }) {
       <CurrentLocation>
         <CurrentText>Antônio Martins</CurrentText>
       </CurrentLocation>
-      <TouchableOpacity onPress={() =>
-        navigation.navigate('Bag', {
-          products: itemsBag,
-        })
-      } style={{width: 30, height:41,justifyContent:'center', alignItems:'center', backgroundColor: 'transparent'}}>
-        <IconCart
-          name="shopping-bag"
-        />
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('Bag', {
+            products: itemsBag,
+          })
+        }
+        style={{
+          width: 30,
+          height: 41,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'transparent',
+        }}>
+        <IconCart name="shopping-bag" />
         {itemsBag.length > 0 && (
           <View style={styles.bad}>
             <Text
@@ -49,7 +55,6 @@ function HeaderMain({ navigation }) {
           </View>
         )}
       </TouchableOpacity>
-
     </Container>
   );
 }
@@ -61,7 +66,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 0,
-    left:22,
+    left: 22,
     backgroundColor: colors.terciary,
     borderRadius: 6,
     width: 12,

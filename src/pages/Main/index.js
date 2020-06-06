@@ -17,7 +17,6 @@ import SnackBar from '~/pages/Main/Snacks';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { SnackBarActions } from '~/store/ducks/snackbar';
-import { CatActions } from '~/store/ducks/categories';
 import { bagActions } from '~/store/ducks/bag';
 
 export default function Main({ navigation }) {
@@ -43,7 +42,6 @@ export default function Main({ navigation }) {
 
   function snackbarsLoad() {
     dispatch(SnackBarActions.snackbarsRequest());
-    dispatch(CatActions.categoryRequest());
     dispatch(bagActions.load_bag_request());
   }
 
