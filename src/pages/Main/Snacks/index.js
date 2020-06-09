@@ -14,8 +14,9 @@ import {
 import { colors } from '~/styles';
 import { SnackBarActions } from '~/store/ducks/snackbar';
 import { useDispatch } from 'react-redux';
+import { withNavigation } from 'react-navigation';
 
-export default function SnackBar({ navigation, snack }) {
+function SnackBar({ navigation, snack }) {
   const dispatch = useDispatch();
 
   async function detailSnackBar(id) {
@@ -55,3 +56,5 @@ export default function SnackBar({ navigation, snack }) {
     </Action>
   );
 }
+
+export default withNavigation(SnackBar);

@@ -154,19 +154,19 @@ export default function DetailSnackBar({ navigation }) {
                     snackbar.snack_address.city}
                 </Info>
               </InfoContainer>
-              <InfoContainer onPress={() => sendWhatsapp()}>
-                <Space>
-                  <InfoTitle>Contato</InfoTitle>
-                  <IonIcon
-                    name="ios-arrow-down"
-                    size={13}
-                    color={colors.secondary}
-                  />
-                </Space>
-                <Info>
-                  <Icon name="phone" size={21} color={colors.secondary} />
-                </Info>
-              </InfoContainer>
+              {/*<InfoContainer onPress={() => sendWhatsapp()}>*/}
+              {/*  <Space>*/}
+              {/*    <InfoTitle>Contato</InfoTitle>*/}
+              {/*    <IonIcon*/}
+              {/*      name="ios-arrow-down"*/}
+              {/*      size={13}*/}
+              {/*      color={colors.secondary}*/}
+              {/*    />*/}
+              {/*  </Space>*/}
+              {/*  <Info>*/}
+              {/*    <Icon name="phone" size={21} color={colors.secondary} />*/}
+              {/*  </Info>*/}
+              {/*</InfoContainer>*/}
               <InfoContainer>
                 <Space>
                   <InfoTitle>Frete</InfoTitle>
@@ -176,8 +176,19 @@ export default function DetailSnackBar({ navigation }) {
                     color={colors.secondary}
                   />
                 </Space>
-
-                <Icon name="motorcycle" size={21} color={colors.secondary} />
+                {snackbar &&
+                snackbar.delivery_cities &&
+                snackbar.delivery_cities.length == 1 ? (
+                  <Info>
+                    {snackbar.delivery_cities[0].price == 0
+                      ? 'R$ 0'
+                      : `R$ ${parseFloat(
+                          snackbar.delivery_cities[0].price,
+                        ).toFixed(2)}`}
+                  </Info>
+                ) : (
+                  <Icon name="motorcycle" size={21} color={colors.secondary} />
+                )}
               </InfoContainer>
               <InfoContainer
                 onPress={() => {

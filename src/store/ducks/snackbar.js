@@ -3,15 +3,17 @@ export const Types = {
   SNACKBAR_REQUEST: 'SNACKBAR_REQUEST',
   SNACKBAR_SUCCESS: 'SNACKBAR_SUCCESS',
   SNACKBAR_FAIL: 'SNACKBAR_FAIL',
+
   DATAIL_SNACK_REQUEST: 'DATAIL_SNACK_REQUEST',
   DATAIL_SNACK_SUCCESS: 'DATAIL_SNACK_SUCCESS',
+
   ALTERAR_SNACK: 'ALTERAR_SNACK',
   IO_SNACK_ADD: 'IO_SNACK_ADD',
 };
 
 //Reducers
 const INITIAL_STATE = {
-  snackbars: null,
+  all_snacks: [],
   snack: null,
   loading: false,
   loadingDetail: false,
@@ -27,7 +29,7 @@ export default function snackBar(state = INITIAL_STATE, action) {
     case Types.SNACKBAR_SUCCESS:
       return {
         ...state,
-        snackbars: action.payload,
+        all_snacks: action.payload,
         loading: false,
       };
     case Types.SNACKBAR_FAIL:
@@ -50,14 +52,17 @@ export default function snackBar(state = INITIAL_STATE, action) {
     case Types.ALTERAR_SNACK:
       return {
         ...state,
-        snackbars: state.snackbars.map((snack) =>
+        all_snacks: state.all_snacks.map((snack) =>
           snack.id === action.payload.id ? action.payload : snack,
         ),
       };
     case Types.IO_SNACK_ADD:
       return {
         ...state,
-        snackbars: [...state.snackbars, action.payload.snack]
+        all_snacks: state.all_snacks[1].snacks([
+          ...state.all_snacks[1].snacks,
+          action.payload.snack,
+        ]),
       };
     default:
       return state;
@@ -70,9 +75,9 @@ export const SnackBarActions = {
     type: Types.SNACKBAR_REQUEST,
     payload: {},
   }),
-  snackbarsSuccess: (snacks) => ({
+  snackbarsSuccess: (snk) => ({
     type: Types.SNACKBAR_SUCCESS,
-    payload: snacks,
+    payload: snk,
   }),
   snackbarsFail: () => ({
     type: Types.SNACKBAR_FAIL,

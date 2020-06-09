@@ -10,7 +10,6 @@ import {
 import { View, Text, StyleSheet } from 'react-native';
 import { colors, fonts } from '~/styles';
 import { useSelector, useDispatch } from 'react-redux';
-import { SnackBarActions } from '~/store/ducks/snackbar';
 import { TouchableOpacity } from 'react-native';
 import { AppActions } from '~/store/ducks/app';
 

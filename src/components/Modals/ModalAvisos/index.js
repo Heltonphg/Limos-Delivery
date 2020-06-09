@@ -9,7 +9,7 @@ import {
   ModalHeader,
   ModalIcon,
   ModalTitle,
-  ContainerInfo
+  ContainerInfo,
 } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppActions } from '~/store/ducks/app';
@@ -38,11 +38,15 @@ export default function Index() {
     <Container>
       <ModalCloseArea onPress={fecharModal} />
       <ModalBox>
-        <ModalHeader style={{
-          backgroundColor:
-            modalType === 'warning' ? colors.alertError : colors.alertSucess,
-        }}>
-          <ModalIcon name={modalType === 'warning'? 'ios-alert': 'md-checkmark'} color={colors.primary} />
+        <ModalHeader
+          style={{
+            backgroundColor:
+              modalType === 'warning' ? colors.alertError : colors.alertSucess,
+          }}>
+          <ModalIcon
+            name={modalType === 'warning' ? 'ios-alert' : 'md-checkmark'}
+            color={colors.primary}
+          />
         </ModalHeader>
 
         <ContainerInfo>

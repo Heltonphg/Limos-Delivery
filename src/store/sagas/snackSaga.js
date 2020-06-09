@@ -11,7 +11,26 @@ function* loadSnacks() {
     const { data } = yield call(api.get, '/snackbar_user', {
       headers: { Authorization: `Bearer ${token}` },
     });
-    yield put(SnackBarActions.snackbarsSuccess(data));
+    let s = [
+      {
+        id: 0,
+        title: 'Lanchonetes Abertas',
+        snacks: [],
+      },
+      {
+        id: 1,
+        title: 'Lanchonetes Fechadas',
+        snacks: [],
+      },
+    ];
+    data.forEach((i) => {
+      if (i.is_open == true) {
+        s[0].snacks.push(i);
+      } else if (i.is_open == false) {
+        s[1].snacks.push(i);
+      }
+    });
+    yield put(SnackBarActions.snackbarsSuccess(s));
   } catch (e) {
     yield put(SnackBarActions.snackbarsFail());
   }

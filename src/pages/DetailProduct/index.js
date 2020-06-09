@@ -205,9 +205,9 @@ export default function DetailProduct({ navigation }) {
       </Infos>
       <Finaly>
         <ButtonFinaly onPress={() => handleAddToBag()}>
-            <TextButtonFinaly>
-              Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)}
-            </TextButtonFinaly>
+          <TextButtonFinaly>
+            Adicionar - R$ {parseFloat(priceOfBuy).toFixed(2)}
+          </TextButtonFinaly>
         </ButtonFinaly>
       </Finaly>
     </Container>

@@ -1,33 +1,12 @@
 import styled from 'styled-components/native';
 import { colors, fonts } from '../../styles';
-import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 
 export const Container = styled.View`
   flex: 1;
   background-color: ${colors.primary};
 `;
-
-export const ContainerList = styled.View`
-  flex: 0.37;
-`;
-export const LoadContainer = styled.View`
-  flex: 0.37;
-  flex-direction: row;
-`;
-
-export const Load = styled.View`
-  width: 145px;
-  height: 125px;
-   border-radius: 6px;
-  background-color: ${colors.whiter};
-  margin-left: 15px;
-`;
-
-export const ShimmerLoad = styled(ShimmerPlaceHolder)`
-  width: 145px;
-  height: 130px;
-  border-radius: 6px;
-  margin-left: 10px;
+export const Body = styled.View`
+  flex: 1;
 `;
 
 export const Welcome = styled.View`
@@ -55,12 +34,9 @@ export const Title = styled.Text`
   padding: 5px 15px 0 15px;
 `;
 
-export const FlatSnacks = styled.FlatList.attrs({
-  horizontal: true,
+export const FlatList = styled.FlatList.attrs({
+  horizontal: false,
   showsHorizontalScrollIndicator: false,
-  contentContainerStyle: { paddingHorizontal: 10 },
   maxToRenderPerBatch: 10,
   initialNumToRender: 10,
 })``;
-
-

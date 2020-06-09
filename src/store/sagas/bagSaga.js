@@ -47,7 +47,7 @@ function* loadToProductBag() {
   }
 }
 
-function* updateProduct({ payload }) {
+function* updateProductBag({ payload }) {
   yield put(AppActions.openModalLoad());
 
   if (payload.quantity == 1 && payload.add == false) {
@@ -74,6 +74,6 @@ export function* BagSagas() {
   return yield all([
     takeLatest(Types.CREATE_PRODUCT_REQUEST, addToBag),
     takeLatest(Types.LOAD_BAG_REQUEST, loadToProductBag),
-    takeLatest(Types.UPDATE_PODUCT_REQUEST, updateProduct),
+    takeLatest(Types.UPDATE_PODUCT_REQUEST, updateProductBag),
   ]);
 }

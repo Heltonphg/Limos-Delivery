@@ -133,6 +133,7 @@ export const Descri = styled.Text`
   text-align: left;
   color: ${colors.secondary};
 `;
+
 export const TextSubDesc = styled.Text`
   font-family: ${fonts.primary};
   font-size: 17px;
@@ -147,7 +148,6 @@ export const FlatSizes = styled.FlatList.attrs({
 
 export const Infos = styled.View`
   padding: 0 15px;
-  
 `;
 
 export const Finaly = styled.View`
