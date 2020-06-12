@@ -18,7 +18,7 @@ export const TabItem = styled.View`
   height: 39px;
   background: ${colors.whiter};
   border-radius: 6px;
-  margin:0 4px 0 3px;
+  margin: 0 4px 0 3px;
   align-self: center;
   justify-content: center;
   align-items: center;

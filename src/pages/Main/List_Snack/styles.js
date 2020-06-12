@@ -41,8 +41,9 @@ export const ShimmerLoad = styled(ShimmerPlaceHolder)`
   margin-left: 10px;
 `;
 export const ShimmerLoadText = styled(ShimmerPlaceHolder)`
-  width: 200px;
+  width: 157px;
   height: 20px;
   margin-bottom: 10px;
-  margin-left: 15px;
+  border-radius: 2px;
+  margin-left: 11px;
 `;

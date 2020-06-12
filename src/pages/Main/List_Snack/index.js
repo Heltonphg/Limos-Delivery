@@ -1,16 +1,12 @@
 import {
   ContainerList,
   FlatSnacks,
-  Load,
-  LoadContainer,
-  ShimmerLoad,
   Title,
-  ShimmerLoadText,
 } from './styles';
 import SnackBar from '~/pages/Main/Snacks';
 import React from 'react';
 import { View } from 'react-native';
-import { useSelector } from 'react-redux';
+
 
 export default function List_Snack({ snacks }) {
   return (

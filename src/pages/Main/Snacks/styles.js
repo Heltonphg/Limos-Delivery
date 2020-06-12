@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 import { colors, fonts } from '~/styles';
 
 export const Container = styled.View`
-  width: 155px;
-  height: 185px;
+  width: 140px;
+  height: 170px;
   background-color: ${colors.whiter};
   margin-left: 5px;
   border-radius: 6px;
@@ -16,7 +16,6 @@ export const ContentText = styled.View`
   justify-content: center;
   align-items: center;
 `;
-
 
 export const Content = styled.View`
   flex: 1;
@@ -63,5 +62,3 @@ export const Background = styled.ImageBackground`
 export const Action = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7,
 })``;
-
-

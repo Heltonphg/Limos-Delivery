@@ -34,7 +34,7 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 import { useDispatch, useSelector } from 'react-redux';
 import { colors } from '~/styles';
 
-import Categories from '~/components/Categories';
+import Categories from '~/pages/DetailSnackBar/Categories';
 import { ProductActions } from '~/store/ducks/products';
 import { AppActions } from '~/store/ducks/app';
 

@@ -9,7 +9,7 @@ import {
   FlatList,
 } from './styles';
 import HeaderMain from '~/pages/Main/Header';
-
+import Categories from './GeralCategories';
 import { useDispatch, useSelector } from 'react-redux';
 import { SnackBarActions } from '~/store/ducks/snackbar';
 import { AppActions } from '~/store/ducks/app';
@@ -53,6 +53,7 @@ export default function Main({ navigation }) {
         <WelcomeText>Olá, Helton</WelcomeText>
         <HungerText>O que deseja comer hoje?</HungerText>
       </Welcome>
+      <Categories />
       <Body>
         {loading ? (
           <>
