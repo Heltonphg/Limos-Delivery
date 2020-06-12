@@ -30,16 +30,12 @@ import {
 } from './styles';
 import { colors } from '~/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { bagActions } from '~/store/ducks/bag';
-import { BallIndicator } from 'react-native-indicators';
 
 export default function DetailProduct({ navigation }) {
   const dispatch = useDispatch();
   const product = navigation.getParam('product', null);
-
-  //states
-  const loading_create = useSelector((state) => state.bag.loading_create);
 
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(
@@ -140,7 +136,7 @@ export default function DetailProduct({ navigation }) {
         <ContainerDetails>
           <ScrollItems>
             <Item>
-              <BaseText>R$ {parseFloat(priceOfBuy).toFixed(2)}</BaseText>
+              <BaseText>R$ {parseFloat(price.price).toFixed(2)}</BaseText>
             </Item>
             <Item>
               <BaseText>

@@ -11,7 +11,7 @@ export const Body = styled.View`
 
 export const Welcome = styled.View`
   flex: 0.12;
-  padding: 5px 15px;
+  padding: 5px 14px;
   justify-content: center;
 `;
 

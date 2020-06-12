@@ -26,8 +26,8 @@ export const Content = styled.View`
 
 export const Avaliation = styled.View`
   flex-direction: row;
-  width: 40px;
-  margin-left: 7px;
+  width: 35px;
+  margin-left: 5px;
   margin-top: 5px;
   border-radius: 2px;
   justify-content: center;

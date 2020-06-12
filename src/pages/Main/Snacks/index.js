@@ -29,9 +29,12 @@ function SnackBar({ navigation, snack }) {
   return (
     <Action onPress={() => detailSnackBar(snack.id)}>
       <Container
-        style={{
-          overflow: 'hidden',
-        }}>
+        style={[
+          {
+            overflow: 'hidden',
+          },
+          !snack.is_open ? { opacity: 0.3 } : '',
+        ]}>
         <Background
           style={{
             borderBottomLeftRadius: 6,

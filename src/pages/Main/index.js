@@ -8,6 +8,7 @@ import {
   Body,
   FlatList,
 } from './styles';
+import { View } from 'react-native';
 import HeaderMain from '~/pages/Main/Header';
 import Categories from './GeralCategories';
 import { useDispatch, useSelector } from 'react-redux';
@@ -57,6 +58,21 @@ export default function Main({ navigation }) {
       <Body>
         {loading ? (
           <>
+            <ShimmerLoadText
+              autoRun={true}
+              visible={!loading}></ShimmerLoadText>
+            <LoadContainer>
+              <ShimmerLoad autoRun={true} visible={!loading}>
+                <Load />
+              </ShimmerLoad>
+              <ShimmerLoad autoRun={true} visible={!loading}>
+                <Load />
+              </ShimmerLoad>
+              <ShimmerLoad autoRun={true} visible={!loading}>
+                <Load />
+              </ShimmerLoad>
+            </LoadContainer>
+            <View style={{ marginTop: 10 }} />
             <ShimmerLoadText
               autoRun={true}
               visible={!loading}></ShimmerLoadText>

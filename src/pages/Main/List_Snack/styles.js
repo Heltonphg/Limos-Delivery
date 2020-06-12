@@ -27,22 +27,23 @@ export const LoadContainer = styled.View`
 `;
 
 export const Load = styled.View`
-  width: 145px;
-  height: 125px;
+  width: 140px;
+  height: 122px;
   border-radius: 6px;
   background-color: ${colors.whiter};
   margin-left: 15px;
 `;
 
 export const ShimmerLoad = styled(ShimmerPlaceHolder)`
-  width: 145px;
-  height: 130px;
+  width: 135px;
+  height: 140px;
   border-radius: 6px;
   margin-left: 10px;
 `;
 export const ShimmerLoadText = styled(ShimmerPlaceHolder)`
-  width: 157px;
-  height: 20px;
+  width: 153px;
+  margin-top: 10px;
+  height: 12px;
   margin-bottom: 10px;
   border-radius: 2px;
   margin-left: 11px;
