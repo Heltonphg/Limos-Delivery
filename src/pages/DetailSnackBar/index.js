@@ -154,22 +154,20 @@ export default function DetailSnackBar({ navigation }) {
                     snackbar.snack_address.city}
                 </Info>
               </InfoContainer>
-              {/*<InfoContainer onPress={() => sendWhatsapp()}>*/}
-              {/*  <Space>*/}
-              {/*    <InfoTitle>Contato</InfoTitle>*/}
-              {/*    <IonIcon*/}
-              {/*      name="ios-arrow-down"*/}
-              {/*      size={13}*/}
-              {/*      color={colors.secondary}*/}
-              {/*    />*/}
-              {/*  </Space>*/}
-              {/*  <Info>*/}
-              {/*    <Icon name="phone" size={21} color={colors.secondary} />*/}
-              {/*  </Info>*/}
-              {/*</InfoContainer>*/}
-              <InfoContainer>
+              <InfoContainer
+                onPress={() => {
+                  snackbar.delivery_cities.length > 1 &&
+                    dispatch(
+                      AppActions.openModalInfo(
+                        'Fretes:',
+                        [],
+                        [],
+                        [...snackbar.delivery_cities],
+                      ),
+                    );
+                }}>
                 <Space>
-                  <InfoTitle>Frete</InfoTitle>
+                  <InfoTitle>Fretes</InfoTitle>
                   <IonIcon
                     name="ios-arrow-down"
                     size={13}

@@ -21,34 +21,54 @@ export default function ModalInfos() {
   const horarios = useSelector((state) => state.app.horarios);
   const fretes = useSelector((state) => state.app.fretes);
 
+  function render_item(payment) {
+    return (
+      <View style={styles.formpayment}>
+        <View style={styles.contentform}>
+          <Image
+            resizeMode="contain"
+            style={{ width: 70, height: 45 }}
+            source={{ uri: payment.Urlflag }}
+          />
+          <Text style={styles.paymentText}>
+            {payment.name_flag ? payment.name_flag : ''} {payment.type}
+          </Text>
+        </View>
+      </View>
+    );
+  }
+  function render_fretes(frete) {
+    return (
+      <View style={styles.fretes}>
+        <Text style={styles.title_frete}>{frete.city}</Text>
+        <Text style={styles.title_frete}>
+          R$ {parseFloat(frete.price).toFixed(2)}
+        </Text>
+      </View>
+    );
+  }
   return (
     <Modal backdropColor="#222" isVisible={modalInfosVisible}>
-      <View style={styles.conainerModal}>
+      <View
+        style={[
+          styles.conainerModal,
+          form_payment.length > 0
+            ? { height: '55%' }
+            : fretes.length > 0
+            ? { height: '35%' }
+            : '',
+        ]}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{modalInfoTitle}</Text>
         </View>
         <View style={styles.body}>
-          {form_payment && (
-            <FlatList
-              data={form_payment}
-              keyExtractor={(form) => String(form.id)}
-              renderItem={({ item: payment }) => (
-                <View style={styles.formpayment}>
-                  <View style={styles.contentform}>
-                    <Image
-                      resizeMode="contain"
-                      style={{ width: 70, height: 45 }}
-                      source={{ uri: payment.Urlflag }}
-                    />
-                    <Text style={styles.paymentText}>
-                      {payment.name_flag ? payment.name_flag : ''}{' '}
-                      {payment.type}
-                    </Text>
-                  </View>
-                </View>
-              )}
-            />
-          )}
+          <FlatList
+            data={form_payment.length > 0 ? form_payment : fretes}
+            keyExtractor={(form) => String(form.id)}
+            renderItem={({ item }) =>
+              form_payment.length > 0 ? render_item(item) : render_fretes(item)
+            }
+          />
         </View>
         <TouchableOpacity
           style={styles.close}
@@ -63,7 +83,6 @@ export default function ModalInfos() {
 const styles = StyleSheet.create({
   conainerModal: {
     width: '100%',
-    height: '55%',
     borderRadius: 6,
     paddingTop: 15,
     paddingHorizontal: 20,
@@ -90,6 +109,11 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primary,
     color: colors.secondary,
   },
+  title_frete: {
+    fontSize: 17,
+    fontFamily: fonts.secondary,
+    color: colors.secondary,
+  },
   titleContainer: {
     width: '80%',
     justifyContent: 'center',
@@ -100,6 +124,12 @@ const styles = StyleSheet.create({
     marginTop: 5,
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  fretes: {
+    marginTop: 7,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   textformpayment: {
     fontSize: 16,
