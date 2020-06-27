@@ -12,15 +12,23 @@ import {
   CotainerLoading,
   ContentLoading,
 } from './styles';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { colors } from '~/styles';
+import { CatActions } from '~/store/ducks/categories';
 
-function render_cat(item) {
+function render_cat(item, handleSelectCategoryAll, current_all) {
   return (
-    <TabItemContainer>
-      <TabItem>
+    <TabItemContainer onPress={() => handleSelectCategoryAll(item)}>
+      <TabItem
+        style={
+          item.id == current_all.id && {
+            backgroundColor: colors.secondary,
+          }
+        }>
         <ImageIcon
-          tintColor={colors.secondary}
+          tintColor={
+            item.id == current_all.id ? colors.whiter : colors.secondary
+          }
           source={{ uri: item.categoryimg }}
         />
       </TabItem>
@@ -48,10 +56,18 @@ function loading_cate(loading) {
 }
 
 export default function Categories() {
+  const dispatch = useDispatch();
+
   const all_categories = useSelector(
     (state) => state.categories.all_categories,
   );
-  const loading = useSelector((state) => state.snackBar.loading);
+  const loading = useSelector((state) => state.categories.loading_cat);
+  const current_all = useSelector((state) => state.categories.current_all);
+
+  function handleSelectCategoryAll(item) {
+    dispatch(CatActions.setCurrentAll(item));
+  }
+
   return (
     <Container>
       {!loading && <Title>Categorias</Title>}
@@ -68,7 +84,9 @@ export default function Categories() {
         <CategoryContainer
           data={all_categories}
           keyExtractor={(cat) => String(cat.id)}
-          renderItem={({ item }) => render_cat(item)}
+          renderItem={({ item }) =>
+            render_cat(item, handleSelectCategoryAll, current_all)
+          }
         />
       )}
     </Container>

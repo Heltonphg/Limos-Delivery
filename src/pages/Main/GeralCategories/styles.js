@@ -25,7 +25,9 @@ export const TabItem = styled.View`
   align-items: center;
 `;
 
-export const TabItemContainer = styled.View`
+export const TabItemContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.3,
+})`
   justify-content: center;
   align-items: center;
 `;
