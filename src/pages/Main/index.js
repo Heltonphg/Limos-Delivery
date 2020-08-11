@@ -33,7 +33,7 @@ export default function Main({ navigation }) {
   }, []);
 
   function registerToSocket() {
-    const socket = io('http://10.0.0.107:3333');
+    const socket = io(`http://10.0.0.105:3333`);
     socket.on('snack', (newSnack) => {
       dispatch(SnackBarActions.alterarSnack(newSnack));
     });

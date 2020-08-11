@@ -53,7 +53,7 @@ export const Preco = styled.Text`
 export const Description = styled.Text`
   font-size: 11px;
   color: ${colors.whiter};
-  text-align: justify;
+  text-align: center;
   margin-left: 5px;
   margin-right: 5px;
   font-family: ${fonts.secondary};

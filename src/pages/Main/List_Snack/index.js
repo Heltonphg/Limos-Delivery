@@ -11,7 +11,7 @@ import { View } from 'react-native';
 export default function List_Snack({ snacks }) {
   return (
     <View>
-      {snacks && snacks.snacks.length > 0 && <Title>{snacks.title}</Title>}
+      {snacks && snacks?.snacks?.length > 0 && <Title>{snacks.title}</Title>}
       {snacks && (
         <ContainerList>
           <FlatSnacks
