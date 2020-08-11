@@ -3,9 +3,9 @@ import { bagActions, Types } from '../ducks/bag';
 import api from '~/services/api';
 import { showMessage } from 'react-native-flash-message';
 import { AppActions } from '~/store/ducks/app';
+import { JWT } from '~/config/general';
 
-const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTU5MDk0NzM5NX0.fK8MfsqMM00WwhyKeRzMOQA_Ic6F7IsajhD68zQ3MT0';
+const token = JWT;
 
 function* addToBag({ payload }) {
   try {

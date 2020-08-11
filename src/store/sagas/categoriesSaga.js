@@ -1,10 +1,9 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { CatActions, Types } from '../ducks/categories';
 import api from '~/services/api';
+import { JWT } from '~/config/general';
 
-const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTU5MDk0NzM5NX0.fK8MfsqMM00WwhyKeRzMOQA_Ic6F7IsajhD68zQ3MT0';
-
+const token = JWT;
 function* get_cartegories_request() {
   try {
     const { data } = yield call(api.get, `/category`, {

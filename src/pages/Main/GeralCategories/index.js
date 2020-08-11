@@ -21,13 +21,13 @@ function render_cat(item, handleSelectCategoryAll, current_all) {
     <TabItemContainer onPress={() => handleSelectCategoryAll(item)}>
       <TabItem
         style={
-          item.id == current_all.id && {
+          item.id == current_all?.id && {
             backgroundColor: colors.secondary,
           }
         }>
         <ImageIcon
           tintColor={
-            item.id == current_all.id ? colors.whiter : colors.secondary
+            item.id == current_all?.id ? colors.whiter : colors.secondary
           }
           source={{ uri: item.categoryimg }}
         />
