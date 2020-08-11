@@ -10,7 +10,7 @@
 
 
 <h3 align="center">
-   Code and coffee ☕
+   Projeto em desenvolvimento... ☕
 </h3>
 
 ## :rocket: Tecnologias
@@ -24,9 +24,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 O Limos delivery é um projeto que visa conectar lanchonets aos clientes da sua cidade.
 
 ## Fotos
+
 <p align="center">
-  <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/Screenshot_20200508-135422.png" width="160px">
+  <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/login.png" width="160px">
+   <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/forgot.png" width="160px">
+    <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/home.png" width="160px">
+    <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/detail.png" width="160px">
+    <img src="https://github.com/Heltonphg/Limos-Delivery/blob/master/.github/card.png" width="160px">
 </p>
+
 
 ####Depurar via reactotron *(https://github.com/infinitered/reactotron)*
     adb reverse tcp:9090 tcp:9090
