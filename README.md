@@ -1,10 +1,10 @@
 <h2 align="center">Aplicativo Limos Delivery</h2>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/heltonphg/Limos-Delivery">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/heltonphg/Limos-Delivery">
-   <a href="https://github.com/heltonphg/backend_delivery/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/heltonphg/Limos-Delivery">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Heltonphg/Limos-Delivery">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Heltonphg/Limos-Delivery">
+   <a href="https://github.com/Heltonphg/backend_delivery/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Heltonphg/Limos-Delivery">
   </a>
 </p>
 
